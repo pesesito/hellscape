@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://textures/lava.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+color = Color( 0.596078, 0.0666667, 0.0666667, 1 )
+energy = 2.94
+shadow_enabled = true

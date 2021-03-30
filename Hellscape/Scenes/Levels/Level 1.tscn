@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Path2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/background.png" type="Texture" id=4]
+[ext_resource path="res://textures/light.png" type="Texture" id=5]
+[ext_resource path="res://Sprite.tscn" type="PackedScene" id=6]
+
+[node name="World" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( -156.892, 77.4144 )
+texture = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 90.9872, 72.8263 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+mode = 1
+shadow_enabled = true
+
+[node name="Sprite" parent="." instance=ExtResource( 6 )]
+position = Vector2( 19.8733, 9.6258 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 432.035, 843.113 )
+
+[node name="Path2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 321.873, 749.653 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( -201.459, 203.549 )
+tile_data = PoolIntArray( -1507317, 0, 0, -1441781, 0, 0, -1441777, 0, 0, -1376245, 0, 0, -1376241, 0, 0, -1310709, 0, 0, -1310705, 0, 0, -1245173, 0, 0, -1245169, 0, 0, -1179637, 0, 0, -1179633, 0, 0, -1114101, 0, 0, -1114097, 0, 0, -1048565, 0, 0, -1048561, 0, 0, -983029, 0, 0, -983025, 0, 0, -917493, 0, 0, -917489, 0, 0, -851957, 0, 0, -851953, 0, 0, -786421, 0, 0, -786417, 0, 0, -720885, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -720878, 0, 0, -720877, 0, 0, -720876, 0, 0, -720875, 0, 0, -720874, 0, 0, -720873, 0, 0, -720872, 0, 0, -720871, 0, 0, -720870, 0, 0, -720869, 0, 0, -720868, 0, 0, -720867, 0, 0, -720866, 0, 0, -720865, 0, 0, -720864, 0, 0, -720863, 0, 0, -720862, 0, 0, -720861, 0, 0, -720860, 0, 0, -655349, 0, 0, -655329, 0, 0, -589813, 0, 0, -589793, 0, 0, -524277, 0, 0, -524257, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -458733, 0, 0, -458732, 0, 0, -458731, 0, 0, -458730, 0, 0, -458729, 0, 0, -458728, 0, 0, -458727, 0, 0, -458726, 0, 0, -458725, 0, 0, -458724, 0, 0, -458723, 0, 0, -458722, 0, 0, -458721, 0, 0, -458720, 0, 0, -458719, 0, 0, -458718, 0, 0, -458717, 0, 0, -458716, 0, 0 )
