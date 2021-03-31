@@ -32,7 +32,7 @@ func _process(_delta):
 		Debug = true
 	if Input.is_action_just_pressed("dissableDebug"):
 		Debug = false
-		$Colision.disabled = false
+		$Collision.disabled = false
 		$Area2D/CollisionShape2D.disabled = false
 		
 	if Input.is_action_just_pressed("vision"):

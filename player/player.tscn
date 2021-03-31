@@ -45,7 +45,7 @@ hue_variation = 0.25
 hue_variation_random = 1.0
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8, 8 )
+extents = Vector2( 7.9, 7.9 )
 
 [node name="player" type="KinematicBody2D"]
 position = Vector2( -1.06066, -4.41942 )
@@ -101,13 +101,17 @@ smoothing_enabled = true
 position = Vector2( 6.64743, -6.468 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )
+color = Color( 0.447059, 0.431373, 0.713726, 1 )
 range_height = 2048.0
 shadow_enabled = true
-shadow_color = Color( 0.854902, 0.0392157, 0.0392157, 0 )
+shadow_color = Color( 1, 0, 0, 0 )
 shadow_buffer_size = 2800
 shadow_gradient_length = 1.0
 shadow_filter = 5
-shadow_filter_smooth = 5.5
+shadow_filter_smooth = 4.5
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 rotation = -1.5708
