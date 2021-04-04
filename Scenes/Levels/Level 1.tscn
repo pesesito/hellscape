@@ -15,7 +15,7 @@ _data = {
 [node name="Node" type="Node"]
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 112.762, 203.261 )
+position = Vector2( 113.292, 202.731 )
 rotation = 2.35619
 scale = Vector2( 69, 69 )
 texture = ExtResource( 5 )

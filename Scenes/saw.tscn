@@ -22,10 +22,16 @@ position = Vector2( -0.851, -0.878 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -0.594604, -0.743256 )
+position = Vector2( -0.200878, -0.900746 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 shadow_enabled = true
+shadow_buffer_size = 1024
 shadow_gradient_length = 2.0
-shadow_filter = 5
-shadow_filter_smooth = 64.0
+shadow_filter_smooth = 15.5
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.887, -0.985 )
+scale = Vector2( 0.301, 0.235 )
+[connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]
+[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_exited"]
