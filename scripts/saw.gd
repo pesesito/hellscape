@@ -1,5 +1,9 @@
 extends Area2D
 
+func _ready():
+	$saw.hide()
+	$Light2D.enabled = false
+
 # Spini boi
 func _process(_delta):
 	$saw.rotation += 1
