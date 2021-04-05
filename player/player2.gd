@@ -23,6 +23,9 @@ func _ready():
 	dead = false
 	nextlevel = false
 	
+	$player.modulate = globals.playerColor
+	$particles/movement.modulate = globals.playerTrailColor
+	
 
 func _process(_delta):
 	
@@ -34,13 +37,9 @@ func _process(_delta):
 		Debug = false
 		$Collision.disabled = false
 		$Area2D/CollisionShape2D.disabled = false
-		
-	if Input.is_action_just_pressed("vision"):
-		print("bruh")
-		vision()
-	if Input.is_action_just_pressed("speed"):
-		speed()
-		print("bruh1")
+
+	if Input.is_action_just_pressed("main_menu"):
+		get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
 
 func _physics_process(_delta):
 	
@@ -140,39 +139,6 @@ func _on_Timer_timeout():
 
 func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
 # warning-ignore:return_value_discarded
-	if not Input.is_action_pressed("vision"):
-		if not Input.is_action_pressed("speed"):
-			if not dead:
-				death()
+	if not dead:
+		death()
 
-# Vision effect code
-
-func vision():
-	$visionTimer.start()
-	$Camera2D.zoom.x = 0.5
-	$Camera2D.zoom.y = 0.5
-	$Light2D.scale.x = 7
-	$Light2D.scale.y = 7
-	$Light2D.energy = 1.1
-
-func _on_visionTimer_timeout():
-	print(zoom)
-	print("timeout")
-	$Camera2D.zoom.x = 0.25
-	$Camera2D.zoom.y = 0.25
-	$Light2D.scale.x = 5
-	$Light2D.scale.y = 5
-	$Light2D.energy = 1
-
-# warning-ignore:function_conflicts_variable
-func speed():
-	speed = speed * 1.5
-	max_speed = max_speed * 1.5
-	jump_force = jump_force * 1.5
-	jump_force_wall = jump_force_wall * 1.5
-
-func _on_speedTimer_timeout():
-	speed = 25
-	max_speed = 200
-	jump_force = -300
-	jump_force_wall = -300 * mult_jump_wall

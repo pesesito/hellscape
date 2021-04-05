@@ -26,6 +26,8 @@ func _on_closemenuButton_pressed():
 	$Control/settingsButton.show()
 	$Control/settings.hide()
 
-
 func _on_exitButton_pressed():
 	get_tree().quit()
+
+func _on_colorPicker_pressed():
+	get_tree().change_scene("res://Scenes/MAIN_MENU_Color.tscn")

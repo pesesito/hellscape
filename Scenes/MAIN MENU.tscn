@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player2.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://textures/UI/off.png" type="Texture" id=14]
 [ext_resource path="res://textures/UI/closemenu.png" type="Texture" id=15]
 [ext_resource path="res://textures/UI/exit.png" type="Texture" id=16]
+[ext_resource path="res://textures/UI/colorCustomize.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -69,13 +70,16 @@ blend_mode = 1
 [sub_resource type="CanvasItemMaterial" id=9]
 blend_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id=12]
-blend_mode = 1
-
 [sub_resource type="CanvasItemMaterial" id=10]
 blend_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id=11]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=12]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=13]
 blend_mode = 1
 
 [node name="Node" type="Node"]
@@ -314,8 +318,9 @@ anchor_left = -0.25
 anchor_top = -0.247
 anchor_right = 0.249
 anchor_bottom = 0.25
+margin_left = -0.297302
 margin_top = 0.300003
-margin_right = 0.600006
+margin_right = 0.302704
 margin_bottom = 1.52588e-05
 __meta__ = {
 "_edit_use_anchors_": false
@@ -324,9 +329,10 @@ __meta__ = {
 [node name="title" type="Sprite" parent="Control"]
 modulate = Color( 0.568627, 0.227451, 0.227451, 1 )
 material = SubResource( 7 )
-position = Vector2( 419.44, 191.685 )
+position = Vector2( 962.093, 127.059 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
+offset = Vector2( -1111.36, 129.252 )
 
 [node name="startButton" type="Button" parent="Control"]
 material = SubResource( 8 )
@@ -355,7 +361,7 @@ __meta__ = {
 }
 
 [node name="exitButton" type="Button" parent="Control"]
-material = SubResource( 12 )
+material = SubResource( 10 )
 margin_left = 661.719
 margin_top = 365.233
 margin_right = 778.719
@@ -377,12 +383,12 @@ __meta__ = {
 }
 
 [node name="fullscreenButton" type="CheckButton" parent="Control/settings"]
-material = SubResource( 10 )
+material = SubResource( 11 )
 anchor_right = 0.914
-margin_left = 273.15
-margin_top = -192.63
-margin_right = 467.59
-margin_bottom = -150.63
+margin_left = 257.714
+margin_top = -192.927
+margin_right = 452.154
+margin_bottom = -150.927
 custom_icons/off = ExtResource( 14 )
 custom_icons/on = ExtResource( 11 )
 icon = ExtResource( 13 )
@@ -393,12 +399,26 @@ __meta__ = {
 }
 
 [node name="closemenuButton" type="Button" parent="Control/settings"]
-material = SubResource( 11 )
-margin_left = 254.876
-margin_top = -2.52271
-margin_right = 538.876
-margin_bottom = 47.4773
+material = SubResource( 12 )
+margin_left = 230.816
+margin_top = -6.50071
+margin_right = 514.816
+margin_bottom = 43.4993
+rect_pivot_offset = Vector2( -364.443, -223.72 )
 icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="colorPicker" type="Button" parent="Control/settings"]
+material = SubResource( 13 )
+margin_left = 247.556
+margin_top = -141.967
+margin_right = 498.556
+margin_bottom = -77.9668
+icon = ExtResource( 17 )
 flat = true
 expand_icon = true
 __meta__ = {
@@ -414,3 +434,4 @@ __meta__ = {
 [connection signal="pressed" from="Control/exitButton" to="." method="_on_exitButton_pressed"]
 [connection signal="toggled" from="Control/settings/fullscreenButton" to="." method="_on_fullscreenButton_toggled"]
 [connection signal="pressed" from="Control/settings/closemenuButton" to="." method="_on_closemenuButton_pressed"]
+[connection signal="pressed" from="Control/settings/colorPicker" to="." method="_on_colorPicker_pressed"]
