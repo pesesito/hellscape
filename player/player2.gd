@@ -5,7 +5,7 @@ var motion = Vector2()
 export var speed = 25
 export var max_speed = 200
 export var gravity = 10
-export var jump_force = -300
+export var jump_force = -310
 export var mult_jump_wall = 1.2
 var jump_force_wall = -300 * mult_jump_wall
 export var max_fall_speed = 750
@@ -23,9 +23,14 @@ func _ready():
 	dead = false
 	nextlevel = false
 	
+	#Player Colors
 	$player.modulate = globals.playerColor
 	$particles/movement.modulate = globals.playerTrailColor
+	$particles/death.modulate = globals.playerColor
 	
+	#Trail config
+	$particles/movement.set_lifetime(int(globals.lifetime))
+	$particles/movement.set_amount(int(globals.particles))
 
 func _process(_delta):
 	
@@ -39,6 +44,7 @@ func _process(_delta):
 		$Area2D/CollisionShape2D.disabled = false
 
 	if Input.is_action_just_pressed("main_menu"):
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
 
 func _physics_process(_delta):

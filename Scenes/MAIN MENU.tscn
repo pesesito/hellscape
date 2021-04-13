@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player2.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://textures/UI/closemenu.png" type="Texture" id=15]
 [ext_resource path="res://textures/UI/exit.png" type="Texture" id=16]
 [ext_resource path="res://textures/UI/colorCustomize.png" type="Texture" id=17]
+[ext_resource path="res://textures/UI/tailcustomization.png" type="Texture" id=18]
+[ext_resource path="res://textures/UI/performanceMode.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -78,16 +80,23 @@ blend_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id=12]
 blend_mode = 1
+light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id=13]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=14]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=15]
 blend_mode = 1
 
 [node name="Node" type="Node"]
 script = ExtResource( 10 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 4.93242, -33.6307 )
-scale = Vector2( 6.9, 6.9 )
+position = Vector2( -9.36279, -11.7673 )
+scale = Vector2( 420, 420 )
 texture = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -223,7 +232,7 @@ __meta__ = {
 }
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 24.3658, 24.3275 )
+position = Vector2( 24.3658, 23.5784 )
 collision_mask = 7
 script = ExtResource( 2 )
 __meta__ = {
@@ -314,19 +323,17 @@ wait_time = 5.0
 wait_time = 5.0
 
 [node name="Control" type="Control" parent="."]
-anchor_left = -0.25
-anchor_top = -0.247
-anchor_right = 0.249
+anchor_left = -0.250186
+anchor_top = -0.246667
+anchor_right = 0.249189
 anchor_bottom = 0.25
-margin_left = -0.297302
-margin_top = 0.300003
-margin_right = 0.302704
-margin_bottom = 1.52588e-05
+margin_bottom = -1.52588e-05
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="title" type="Sprite" parent="Control"]
+visible = false
 modulate = Color( 0.568627, 0.227451, 0.227451, 1 )
 material = SubResource( 7 )
 position = Vector2( 962.093, 127.059 )
@@ -335,94 +342,128 @@ texture = ExtResource( 8 )
 offset = Vector2( -1111.36, 129.252 )
 
 [node name="startButton" type="Button" parent="Control"]
+visible = false
 material = SubResource( 8 )
-margin_left = 312.404
-margin_top = 229.294
-margin_right = 502.404
-margin_bottom = 296.294
+anchor_left = 0.390994
+anchor_top = 0.512962
+anchor_right = 0.628791
+anchor_bottom = 0.66285
 icon = ExtResource( 9 )
 flat = true
 expand_icon = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="settingsButton" type="Button" parent="Control"]
+visible = false
 material = SubResource( 9 )
-margin_left = 26.8249
-margin_top = 369.208
-margin_right = 192.825
-margin_bottom = 416.208
+anchor_left = 0.0335731
+anchor_top = 0.825969
+anchor_right = 0.241333
+anchor_bottom = 0.931114
 icon = ExtResource( 12 )
 flat = true
 expand_icon = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="exitButton" type="Button" parent="Control"]
+visible = false
 material = SubResource( 10 )
-margin_left = 661.719
-margin_top = 365.233
-margin_right = 778.719
-margin_bottom = 416.233
+anchor_left = 0.828184
+anchor_top = 0.817076
+anchor_right = 0.974617
+anchor_bottom = 0.93117
 icon = ExtResource( 16 )
 flat = true
 expand_icon = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="settings" type="Control" parent="Control"]
-margin_left = 27.532
-margin_top = 367.97
-margin_right = 67.532
-margin_bottom = 407.97
+anchor_left = 0.0344581
+anchor_top = 0.823199
+anchor_right = 0.0845206
+anchor_bottom = 0.912685
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="fullscreenButton" type="CheckButton" parent="Control/settings"]
 material = SubResource( 11 )
-anchor_right = 0.914
-margin_left = 257.714
-margin_top = -192.927
-margin_right = 452.154
-margin_bottom = -150.927
+anchor_left = 6.44285
+anchor_top = -6.57317
+anchor_right = 12.2178
+anchor_bottom = -5.52318
 custom_icons/off = ExtResource( 14 )
 custom_icons/on = ExtResource( 11 )
 icon = ExtResource( 13 )
 flat = true
 expand_icon = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="closemenuButton" type="Button" parent="Control/settings"]
 material = SubResource( 12 )
-margin_left = 230.816
-margin_top = -6.50071
-margin_right = 514.816
-margin_bottom = 43.4993
+anchor_left = 5.7704
+anchor_top = -0.162518
+anchor_right = 12.8704
+anchor_bottom = 1.08748
+margin_left = -1.52588e-05
+margin_top = 4.76837e-07
 rect_pivot_offset = Vector2( -364.443, -223.72 )
 icon = ExtResource( 15 )
 flat = true
 expand_icon = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="colorPicker" type="Button" parent="Control/settings"]
 material = SubResource( 13 )
-margin_left = 247.556
-margin_top = -141.967
-margin_right = 498.556
-margin_bottom = -77.9668
+anchor_left = 6.1889
+anchor_top = -5.17417
+anchor_right = 12.4639
+anchor_bottom = -3.57417
+margin_right = 3.05176e-05
 icon = ExtResource( 17 )
 flat = true
 expand_icon = true
 __meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="trailButton" type="Button" parent="Control/settings"]
+material = SubResource( 14 )
+margin_left = 245.793
+margin_top = -137.364
+margin_right = 499.793
+margin_bottom = -66.3636
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+__meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="performanceMode" type="CheckButton" parent="Control/settings"]
+material = SubResource( 15 )
+anchor_left = 6.5751
+anchor_top = -8.00613
+anchor_right = 12.1501
+anchor_bottom = -6.60614
+margin_right = 3.05176e-05
+custom_icons/off = ExtResource( 14 )
+custom_icons/on = ExtResource( 11 )
+icon = ExtResource( 19 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
 }
 
 [connection signal="area_shape_entered" from="player/Area2D" to="player" method="_on_Area2D_area_shape_entered"]
@@ -435,3 +476,5 @@ __meta__ = {
 [connection signal="toggled" from="Control/settings/fullscreenButton" to="." method="_on_fullscreenButton_toggled"]
 [connection signal="pressed" from="Control/settings/closemenuButton" to="." method="_on_closemenuButton_pressed"]
 [connection signal="pressed" from="Control/settings/colorPicker" to="." method="_on_colorPicker_pressed"]
+[connection signal="pressed" from="Control/settings/trailButton" to="." method="_on_trailButton_pressed"]
+[connection signal="toggled" from="Control/settings/performanceMode" to="." method="_on_performanceMode_toggled"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/player2.gd" type="Script" id=1]
 [ext_resource path="res://textures/tileset.png" type="Texture" id=2]
@@ -22,17 +22,19 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 15.0
 scale_curve = SubResource( 3 )
-hue_variation_random = 1.0
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
+
+[sub_resource type="Curve" id=6]
 max_value = 3.0
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 3 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
+[sub_resource type="CurveTexture" id=7]
 width = 2024
-curve = SubResource( 5 )
+curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=8]
 lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 50.0
@@ -43,19 +45,20 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity_random = 1.0
 orbit_velocity = 1.0
 orbit_velocity_random = 1.0
+radial_accel = 1000.0
 tangential_accel = 100.0
 tangential_accel_random = 1.0
 angle = -720.0
 angle_random = 1.0
 scale_random = 1.0
-scale_curve = SubResource( 6 )
-color = Color( 0, 0, 0, 1 )
+scale_curve = SubResource( 7 )
 hue_variation_random = 1.0
 
-[sub_resource type="CanvasItemMaterial" id=8]
+[sub_resource type="CanvasItemMaterial" id=9]
 blend_mode = 1
+light_mode = 1
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 7.9, 7.9 )
 
 [node name="player" type="KinematicBody2D"]
@@ -82,23 +85,23 @@ local_coords = false
 process_material = SubResource( 4 )
 
 [node name="death" type="Particles2D" parent="particles"]
+material = SubResource( 5 )
 emitting = false
-amount = 100
-lifetime = 0.46
+amount = 500
 one_shot = true
 fixed_fps = 60
 local_coords = false
-process_material = SubResource( 7 )
+process_material = SubResource( 8 )
 
 [node name="player" type="Sprite" parent="."]
 light_mask = 0
-material = SubResource( 8 )
+material = SubResource( 9 )
 z_index = 3
 z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

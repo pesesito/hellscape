@@ -1,5 +1,11 @@
 extends Node
 
-var playerColor = Color(000000)
+var playerColor = Color(1,1,1,1)
 
-var playerTrailColor = Color(000000)
+var playerTrailColor = Color(0,0,0,1)
+
+var particles = 5
+
+var lifetime = 30
+
+var performanceMode = false

@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/MAIN_MENU_Color.gd" type="Script" id=1]
 [ext_resource path="res://textures/UI/playerColor.png" type="Texture" id=2]
-[ext_resource path="res://scripts/colorPicker.gd" type="Script" id=3]
 [ext_resource path="res://textures/UI/trailColor.png" type="Texture" id=4]
 [ext_resource path="res://background.png" type="Texture" id=5]
 [ext_resource path="res://textures/UI/closemenu.png" type="Texture" id=6]
@@ -34,7 +33,6 @@ margin_left = -0.297302
 margin_top = 0.300003
 margin_right = 0.302704
 margin_bottom = 1.52588e-05
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

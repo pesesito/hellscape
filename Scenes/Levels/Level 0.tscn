@@ -43,11 +43,9 @@ cast_to = Vector2( 0, 20 )
 [node name="Area2D2" parent="saw" instance=ExtResource( 3 )]
 position = Vector2( 156.786, 14.7021 )
 
-[node name="Light2D" parent="saw/Area2D2" index="2"]
-shadow_gradient_length = 0.0
-
 [node name="Area2D3" parent="saw" instance=ExtResource( 3 )]
-position = Vector2( 113.147, -95.2525 )
+position = Vector2( 113.708, -98.7 )
+rotation = -1.57079
 
 [node name="Area2D4" parent="saw" instance=ExtResource( 3 )]
 position = Vector2( 47.3969, -142.185 )
@@ -206,5 +204,4 @@ scale = Vector2( 0.284, 0.982 )
 next_world = "res://Scenes/Levels/Level 1.tscn"
 
 [editable path="KinematicBody2D"]
-
 [editable path="saw/Area2D2"]
