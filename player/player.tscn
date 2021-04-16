@@ -62,6 +62,7 @@ light_mode = 1
 extents = Vector2( 7.9, 7.9 )
 
 [node name="player" type="KinematicBody2D"]
+position = Vector2( 0, 0.445446 )
 collision_mask = 7
 script = ExtResource( 1 )
 __meta__ = {
@@ -104,6 +105,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+rotating = true
 current = true
 zoom = Vector2( 0.25, 0.25 )
 process_mode = 0
@@ -147,16 +149,20 @@ rotation = 1.5708
 enabled = true
 cast_to = Vector2( 25, 0 )
 
+[node name="RayCastDownLeftUp" type="RayCast2D" parent="."]
+position = Vector2( -10, 0 )
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( -25, 0 )
+
+[node name="RayCastDownRightUp" type="RayCast2D" parent="."]
+position = Vector2( 10, 0 )
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( -25, 0 )
+
 [node name="deathTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="visionTimer" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="speedTimer" type="Timer" parent="."]
-wait_time = 5.0
-
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="visionTimer" to="." method="_on_visionTimer_timeout"]
-[connection signal="timeout" from="speedTimer" to="." method="_on_speedTimer_timeout"]

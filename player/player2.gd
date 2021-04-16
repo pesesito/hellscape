@@ -4,8 +4,8 @@ const UP = Vector2(0, -1)
 var motion = Vector2()
 export var speed = 25
 export var max_speed = 200
-export var gravity = 10
-export var jump_force = -310
+var gravity = globals.gravity
+var jump_force = -globals.jump_force
 export var mult_jump_wall = 1.2
 var jump_force_wall = -300 * mult_jump_wall
 export var max_fall_speed = 750
@@ -28,9 +28,22 @@ func _ready():
 	$particles/movement.modulate = globals.playerTrailColor
 	$particles/death.modulate = globals.playerColor
 	
+	
 	#Trail config
+	if int(globals.particles) >= 9999:
+		globals.particles = 9999
 	$particles/movement.set_lifetime(int(globals.lifetime))
 	$particles/movement.set_amount(int(globals.particles))
+	print("Global particles: ", globals.particles)
+	
+	
+	#Gravity
+	gravity = globals.gravity
+	jump_force = -globals.jump_force
+	$RayCastDownLeft.set_enabled(true)
+	$RayCastDownRight.set_enabled(true)
+	$RayCastDownLeftUp.set_enabled(false)
+	$RayCastDownRightUp.set_enabled(false)
 
 func _process(_delta):
 	
@@ -48,6 +61,25 @@ func _process(_delta):
 		get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
 
 func _physics_process(_delta):
+	
+	#Gravity Inversion
+	
+	if Input.is_action_pressed("gravity") and not Input.is_action_pressed("touching something uwu"):
+		if globals.inverseGravity == true:
+			gravity = -globals.gravity
+			jump_force = globals.jump_force
+			$RayCastDownLeft.set_enabled(false)
+			$RayCastDownRight.set_enabled(false)
+			$RayCastDownLeftUp.set_enabled(true)
+			$RayCastDownRightUp.set_enabled(true)
+			
+		elif globals.inverseGravity == false:
+			gravity = globals.gravity
+			jump_force = -globals.jump_force
+			$RayCastDownLeft.set_enabled(true)
+			$RayCastDownRight.set_enabled(true)
+			$RayCastDownLeftUp.set_enabled(false)
+			$RayCastDownRightUp.set_enabled(false)
 	
 	# Player physics code
 	
@@ -69,11 +101,11 @@ func _physics_process(_delta):
 		if Debug == true and not _pressing_movement():
 			motion.x = 0
 		
-		if _is_in_floor():
+		if _is_in_floor() or _is_in_ceiling():
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y = jump_force
 		if not _pressing_movement() and not dead:
-			if is_on_floor():
+			if is_on_floor() or _is_in_ceiling():
 				motion.x = lerp(motion.x, 0, 0.25)
 			if not is_on_floor():
 				motion.x = lerp(motion.x, 0, 0.05)
@@ -121,7 +153,10 @@ func _next_to_wall():
 func _is_in_floor():
 	return $RayCastDownLeft.is_colliding() or $RayCastDownRight.is_colliding()
 
-# warning-ignore:function_conflicts_variable
+func _is_in_ceiling():
+	return $RayCastDownLeftUp.is_colliding() or $RayCastDownRightUp.is_colliding()
+
+
 # warning-ignore:function_conflicts_variable
 func nextlevel():
 	dead = false
@@ -132,7 +167,7 @@ func nextlevel():
 	$NextLevel.visible = true
 
 func death():
-	motion.y = -300
+	motion.y = globals.jump_force * 1.5
 	dead = true
 	$particles/death.set_emitting(true)
 	$deathTimer.start()
@@ -144,7 +179,8 @@ func _on_Timer_timeout():
 	$particles/death.set_emitting(false)
 
 func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
-# warning-ignore:return_value_discarded
-	if not dead:
+	if not Input.is_action_pressed("gravity") and not dead:
 		death()
-
+	else:
+		print("Gravity Portal Collition")
+		print(Input.is_action_just_pressed("gravity"))

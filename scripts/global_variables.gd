@@ -9,3 +9,7 @@ var particles = 5
 var lifetime = 30
 
 var performanceMode = false
+
+var gravity = 10
+var jump_force = 310
+var inverseGravity = false

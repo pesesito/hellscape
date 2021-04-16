@@ -4,10 +4,10 @@
 [ext_resource path="res://scripts/saw.gd" type="Script" id=2]
 [ext_resource path="res://textures/light.png" type="Texture" id=3]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 9.26028
 
 [node name="saw" type="Area2D"]
@@ -16,21 +16,21 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="saw" type="Sprite" parent="."]
+visible = false
 position = Vector2( -1.011, -1.14 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
 [node name="sawMaterial" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( -1.011, -1.14 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.851, -0.878 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -44,6 +44,5 @@ shadow_filter_smooth = 2.0
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -0.887, -0.985 )
 scale = Vector2( 0.301, 0.235 )
-
 [connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]
 [connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_exited"]

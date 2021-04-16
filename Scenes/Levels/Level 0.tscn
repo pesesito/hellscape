@@ -25,6 +25,7 @@ scale = Vector2( 64.6195, 33.8057 )
 texture = ExtResource( 6 )
 
 [node name="Path2D" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( -145, 0 )
 curve = SubResource( 1 )
 
@@ -72,7 +73,7 @@ position = Vector2( 235.241, -192.585 )
 rotation = 0.830806
 
 [node name="Area2D11" parent="saw" instance=ExtResource( 3 )]
-position = Vector2( 140.752, -191.38 )
+position = Vector2( 141.086, -193.716 )
 rotation = 0.830806
 
 [node name="Area2D12" parent="saw" instance=ExtResource( 3 )]
@@ -188,11 +189,11 @@ position = Vector2( 499.826, -303.54 )
 rotation = 4.71238
 
 [node name="Area2D41" parent="saw" instance=ExtResource( 3 )]
-position = Vector2( 462.024, -467.573 )
+position = Vector2( 464.997, -468.168 )
 rotation = 3.14159
 
 [node name="Area2D17" parent="saw" instance=ExtResource( 3 )]
-position = Vector2( -7.61443, -352.781 )
+position = Vector2( -6.42522, -350.403 )
 rotation = 3.51566
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
