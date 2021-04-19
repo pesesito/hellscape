@@ -55,7 +55,10 @@ func _process(_delta):
 		Debug = false
 		$Collision.disabled = false
 		$Area2D/CollisionShape2D.disabled = false
-
+	
+	if Input.is_action_just_pressed("lowSpec"):
+		globals.performanceMode = true
+	
 	if Input.is_action_just_pressed("main_menu"):
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
@@ -64,7 +67,7 @@ func _physics_process(_delta):
 	
 	#Gravity Inversion
 	
-	if Input.is_action_pressed("gravity") and not Input.is_action_pressed("touching something uwu"):
+	if Input.is_action_pressed("gravity"):
 		if globals.inverseGravity == true:
 			gravity = -globals.gravity
 			jump_force = globals.jump_force
@@ -181,6 +184,3 @@ func _on_Timer_timeout():
 func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
 	if not Input.is_action_pressed("gravity") and not dead:
 		death()
-	else:
-		print("Gravity Portal Collition")
-		print(Input.is_action_just_pressed("gravity"))

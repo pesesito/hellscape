@@ -9,48 +9,365 @@
 [ext_resource path="res://Scenes/PortalGravity.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
-resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 560.396, -332.769, 0, 0, 0, 0, 340.486, -322.162, 0, 0, 0, 0, 341.716, 24.6163, 0, 0, 0, 0, 411.642, 22.0964, 0, 0, 0, 0, 410.491, -143.053, 0, 0, 0, 0, 611.991, -140.053, 0, 0, 0, 0, 613.322, 226.829, 42.255, 1.68179, -42.255, -1.68179, 541.076, 209.027, 80.7261, -5.46583, -80.7261, 5.46583, 408.665, 235.537, 0, 0, 0, 0, 294.615, 227.423, 0, 0, 0, 0, 306.544, -430.887 )
+"points": PoolVector2Array( 0, 0, 0, 0, 308.508, -326.229, 0, 0, 0, 0, 307.248, 27.1793, 0, 0, 0, 0, 398.725, 25.2694, 0, 0, 0, 0, 394.081, -153.092, 0, 0, 0, 0, 620.753, -146.566, 0, 0, 0, 0, 624.598, 146.994, 0, 0, 0, 0, 392.36, 96.0519, 0, 0, 0, 0, 288.228, 154.486, -191.477, -61.106, 191.477, 61.106, 428.1, 585.947, 0, 0, 0, 0, 594.277, 232.115, 0, 0, 0, 0, 702.823, 220.788, 0, 0, 0, 0, 701.1, -236.053, 0, 0, 0, 0, 385.1, -234.053, 0, 0, 0, 0, 396.1, -414.053, 0, 0, 0, 0, 242.1, -416.053, 0, 0, 0, 0, 245.1, -150.053 )
 }
 
 [node name="Node" type="Node"]
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( -21.5777, 6.45029 )
+position = Vector2( -150.463, -143.718 )
 rotation = 0.785398
 scale = Vector2( 69, 69 )
 texture = ExtResource( 5 )
 
 [node name="Path2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( -251.991, -5.94738 )
+position = Vector2( -248.427, -4.16558 )
 curve = SubResource( 1 )
+speed = 230
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88.1569, -248.387 )
+position = Vector2( 87.8607, -181.921 )
 
 [node name="saw" type="Node" parent="."]
 
 [node name="saw" parent="saw" instance=ExtResource( 4 )]
-position = Vector2( 348.738, -116.173 )
+position = Vector2( 7.67673, 472.669 )
 
-[node name="Next_level" parent="." instance=ExtResource( 6 )]
-position = Vector2( -55.981, -624.929 )
-scale = Vector2( 0.279, 1 )
-next_world = "res://Scenes/MAIN MENU.tscn"
+[node name="saw2" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 7.11548, 493.996 )
+
+[node name="saw45" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 8.17615, 447.327 )
+
+[node name="saw46" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 8.88326, 420.81 )
+
+[node name="saw47" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 9.59036, 392.526 )
+
+[node name="saw48" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 8.07103, 369.402 )
+
+[node name="saw49" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 9.94392, 338.433 )
+
+[node name="saw50" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 11.0046, 312.623 )
+
+[node name="saw51" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 10.651, 288.228 )
+
+[node name="saw52" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 9.23682, 264.186 )
+
+[node name="saw53" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 8.17616, 238.023 )
+
+[node name="saw54" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 7.11549, 210.446 )
+
+[node name="saw55" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 6.05482, 186.405 )
+
+[node name="saw65" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 148.524, 158.625 )
+
+[node name="saw70" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 126.54, 158.625 )
+
+[node name="saw71" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 105.086, 158.625 )
+
+[node name="saw72" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 81.7778, 159.155 )
+
+[node name="saw66" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 309.794, -90.2094 )
+
+[node name="saw67" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 394.522, -10.3987 )
+
+[node name="saw68" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 309.01, 42.4041 )
+
+[node name="saw69" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 396.838, 156.543 )
+
+[node name="saw56" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 75.3515, 281.172 )
+
+[node name="saw57" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 75.2981, 304.251 )
+
+[node name="saw58" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 74.8776, 326.956 )
+
+[node name="saw59" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 77.8245, 348.303 )
+
+[node name="saw60" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 79.5822, 372.519 )
+
+[node name="saw61" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 84.0589, 399.582 )
+rotation = 0.420422
+
+[node name="saw62" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 94.3901, 421.711 )
+rotation = 0.420422
+
+[node name="saw63" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 106.609, 441.798 )
+rotation = 0.420422
+
+[node name="saw3" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 7.11548, 517.568 )
+
+[node name="saw4" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 13.8503, 543.384 )
+
+[node name="saw5" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 31.1744, 563.183 )
+rotation = 0.212632
+
+[node name="saw6" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 51.3269, 579.093 )
+rotation = 0.212632
+
+[node name="saw7" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 70.0652, 595.357 )
+rotation = 0.212632
+
+[node name="saw8" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 94.814, 611.267 )
+rotation = 0.212632
+
+[node name="saw9" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 119.916, 627.53 )
+rotation = 0.212632
+
+[node name="saw10" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 146.079, 639.905 )
+rotation = 0.212632
+
+[node name="saw11" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 173.362, 649.153 )
+rotation = 0.212632
+
+[node name="saw12" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 202.27, 652.343 )
+rotation = 0.212632
+
+[node name="saw13" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 228.473, 646.315 )
+rotation = 0.212632
+
+[node name="saw14" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 252.608, 634.412 )
+rotation = 0.212632
+
+[node name="saw15" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 275.165, 619.75 )
+rotation = 0.212632
+
+[node name="saw16" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 298.527, 603.072 )
+rotation = 0.212632
+
+[node name="saw17" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 316.794, 584.372 )
+rotation = 0.212632
+
+[node name="saw18" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 335.265, 562.176 )
+rotation = 0.212632
+
+[node name="saw19" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 347.718, 538.208 )
+rotation = 0.212632
+
+[node name="saw20" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 356.406, 515.272 )
+rotation = 0.212632
+
+[node name="saw21" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 364.394, 489.482 )
+rotation = 0.212632
+
+[node name="saw22" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 371.171, 461.751 )
+rotation = 0.212632
+
+[node name="saw23" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 374.981, 437.013 )
+rotation = 0.212632
+
+[node name="saw24" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 377.47, 410.586 )
+rotation = 0.212632
+
+[node name="saw25" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 379.163, 385.316 )
+rotation = 0.212632
+
+[node name="saw26" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 379.571, 359.592 )
+rotation = 0.212632
+
+[node name="saw28" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 382.437, 331.489 )
+rotation = 0.212632
+
+[node name="saw29" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 383.221, 303.747 )
+rotation = 0.212632
+
+[node name="saw64" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 385.224, 280.054 )
+rotation = 0.212632
+
+[node name="saw73" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 420.186, 163.513 )
+rotation = 0.212632
+
+[node name="saw75" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 475.187, 71.4711 )
+rotation = 0.212632
+
+[node name="saw76" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 420.747, -8.78496 )
+rotation = 0.212632
+
+[node name="saw77" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 475.748, -94.6533 )
+rotation = 0.212632
+
+[node name="saw78" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 419.064, -177.716 )
+rotation = 0.212632
+
+[node name="saw79" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 228.196, -196.148 )
+rotation = 0.212632
+
+[node name="saw80" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 335.819, -266.311 )
+rotation = 0.212632
+
+[node name="saw81" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 115.816, -209.824 )
+rotation = 0.212632
+
+[node name="saw82" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 170.519, -457.774 )
+rotation = 0.212632
+
+[node name="saw83" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( -12.6185, -460.152 )
+rotation = 0.212632
+
+[node name="saw84" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 117.005, -348.367 )
+rotation = 0.212632
+
+[node name="saw85" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 14.9958, -353.642 )
+rotation = 0.212632
+
+[node name="saw86" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 36.9529, -353.057 )
+rotation = 0.212632
+
+[node name="saw87" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 58.1844, -352.728 )
+rotation = 0.212632
+
+[node name="saw88" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 97.0757, -352.331 )
+rotation = 0.212632
+
+[node name="saw89" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 79.019, -352.331 )
+rotation = 0.212632
+
+[node name="saw30" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 124.463, 458.914 )
+rotation = 0.212632
+
+[node name="saw31" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 146.875, 468.634 )
+rotation = 0.212632
+
+[node name="saw32" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 170.348, 474.016 )
+rotation = 0.212632
+
+[node name="saw36" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 193.933, 471.724 )
+rotation = 0.212632
+
+[node name="saw37" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 218.032, 452.817 )
+rotation = 0.212632
+
+[node name="saw38" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 238.388, 434.129 )
+rotation = 0.212632
+
+[node name="saw39" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 256.074, 414.107 )
+rotation = 0.212632
+
+[node name="saw40" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 275.43, 394.752 )
+rotation = 0.212632
+
+[node name="saw41" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 283.208, 372.831 )
+rotation = 0.212632
+
+[node name="saw42" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 289.218, 344.901 )
+rotation = 0.212632
+
+[node name="saw43" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 291.693, 316.263 )
+rotation = 0.212632
+
+[node name="saw44" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 293.107, 288.686 )
+rotation = 0.212632
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
 
 [node name="portals" type="Node" parent="."]
 
-[node name="PortalGravity" parent="portals" instance=ExtResource( 7 )]
-position = Vector2( 292.243, -143.439 )
+[node name="PortalGravity4" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 42.4836, 359.234 )
+rotation = 1.57079
 scale = Vector2( 0.5, 0.535 )
 
-[node name="PortalGravity2" parent="portals" instance=ExtResource( 7 )]
-position = Vector2( 98.2878, 219.254 )
+[node name="PortalGravity6" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 293.28, -145.919 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.535 )
 
-[node name="Tilemaps" type="Node2D" parent="."]
+[node name="PortalGravity7" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 292.486, 127.907 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.535 )
 
-[node name="TileMap" parent="Tilemaps" instance=ExtResource( 1 )]
-tile_data = PoolIntArray( -1966079, 0, 0, -1966078, 0, 0, -1966077, 0, 0, -1966076, 0, 0, -1966075, 0, 0, -1900543, 0, 0, -1835007, 0, 0, -1769471, 0, 0, -1703935, 0, 0, -1638399, 0, 0, -1638396, 0, 0, -1572863, 0, 0, -1572860, 0, 0, -1507327, 0, 0, -1507324, 0, 0, -1441791, 0, 0, -1441788, 0, 0, -1376255, 0, 0, -1376252, 0, 0, -1310719, 0, 0, -1310716, 0, 0, -1245183, 0, 0, -1245180, 0, 0, -1179647, 0, 0, -1179644, 0, 0, -1114111, 0, 0, -1114108, 0, 0, -1114107, 0, 0, -1114106, 0, 0, -1048575, 0, 0, -1048572, 0, 0, -1048570, 0, 0, -983039, 0, 0, -983036, 0, 0, -983034, 0, 0, -917503, 0, 0, -917500, 0, 0, -917498, 0, 0, -851967, 0, 0, -851964, 0, 0, -851962, 0, 0, -851961, 0, 0, -851960, 0, 0, -851959, 0, 0, -851958, 0, 0, -851957, 0, 0, -851956, 0, 0, -851955, 0, 0, -786431, 0, 0, -786428, 0, 0, -786426, 0, 0, -786419, 0, 0, -786418, 0, 0, -786417, 0, 0, -786416, 0, 0, -786415, 0, 0, -786414, 0, 0, -786413, 0, 0, -786412, 0, 0, -786411, 0, 0, -786410, 0, 0, -786409, 0, 0, -786408, 0, 0, -786407, 0, 0, -720895, 0, 0, -720892, 0, 0, -720890, 0, 0, -720871, 0, 0, -655359, 0, 0, -655356, 0, 0, -655354, 0, 0, -655335, 0, 0, -589823, 0, 0, -589820, 0, 0, -589818, 0, 0, -589799, 0, 0, -524287, 0, 0, -524284, 0, 0, -524282, 0, 0, -524263, 0, 0, -458751, 0, 0, -458748, 0, 0, -458746, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -458727, 0, 0, -393215, 0, 0, -393212, 0, 0, -393210, 0, 0, -393205, 0, 0, -393198, 0, 0, -393191, 0, 0, -327679, 0, 0, -327676, 0, 0, -327674, 0, 0, -327669, 0, 0, -327662, 0, 0, -327655, 0, 0, -262143, 0, 0, -262140, 0, 0, -262138, 0, 0, -262133, 0, 0, -262126, 0, 0, -262119, 0, 0, -196607, 0, 0, -196604, 0, 0, -196602, 0, 0, -196597, 0, 0, -196590, 0, 0, -196583, 0, 0, -131072, 0, 0, -131071, 0, 0, -131068, 0, 0, -131066, 0, 0, -131061, 0, 0, -131054, 0, 0, -131047, 0, 0, -65536, 0, 0, -65532, 0, 0, -65530, 0, 0, -65525, 0, 0, -65518, 0, 0, -65511, 0, 0, 0, 0, 0, 4, 0, 0, 11, 0, 0, 18, 0, 0, 25, 0, 0, 65536, 0, 0, 65540, 0, 0, 65547, 0, 0, 65554, 0, 0, 65561, 0, 0, 131072, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131090, 0, 0, 131097, 0, 0, 196608, 0, 0, 196613, 0, 0, 196626, 0, 0, 196633, 0, 0, 262144, 0, 0, 262149, 0, 0, 262162, 0, 0, 262169, 0, 0, 327680, 0, 0, 327685, 0, 0, 327698, 0, 0, 327705, 0, 0, 393216, 0, 0, 393221, 0, 0, 393234, 0, 0, 393241, 0, 0, 458752, 0, 0, 458757, 0, 0, 458770, 0, 0, 458777, 0, 0, 524288, 0, 0, 524293, 0, 0, 524306, 0, 0, 524313, 0, 0, 589824, 0, 0, 589829, 0, 0, 589842, 0, 0, 589849, 0, 0, 655360, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655385, 0, 0, 720896, 0, 0, 720904, 0, 0, 720905, 0, 0, 720921, 0, 0, 786432, 0, 0, 786440, 0, 0, 786441, 0, 0, 786457, 0, 0, 851968, 0, 0, 851976, 0, 0, 851977, 0, 0, 851985, 0, 0, 851986, 0, 0, 851993, 0, 0, 917504, 0, 0, 917521, 0, 0, 917522, 0, 0, 917529, 0, 0, 983040, 0, 0, 983057, 0, 0, 983058, 0, 0, 983065, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0 )
+[node name="PortalGravity3" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 405.418, 213.529 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.535 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -1900546, 0, 0, -1900545, 0, 0, -1966080, 0, 0, -1966079, 0, 0, -1966078, 0, 0, -1966077, 0, 0, -1966076, 0, 0, -1966075, 0, 0, -1966074, 0, 0, -1966073, 0, 0, -1966072, 0, 0, -1966071, 0, 0, -1966070, 0, 0, -1966069, 0, 0, -1835010, 0, 0, -1900533, 0, 0, -1769474, 0, 0, -1834997, 0, 0, -1703938, 0, 0, -1769461, 0, 0, -1638402, 0, 0, -1703925, 0, 0, -1572866, 0, 0, -1638389, 0, 0, -1507330, 0, 0, -1572853, 0, 0, -1441794, 0, 0, -1507317, 0, 0, -1376258, 0, 0, -1441792, 0, 0, -1441791, 0, 0, -1441790, 0, 0, -1441789, 0, 0, -1441788, 0, 0, -1441787, 0, 0, -1441786, 0, 0, -1441781, 0, 0, -1310722, 0, 0, -1376256, 0, 0, -1376250, 0, 0, -1376245, 0, 0, -1245186, 0, 0, -1310720, 0, 0, -1310714, 0, 0, -1310709, 0, 0, -1179650, 0, 0, -1245184, 0, 0, -1245178, 0, 0, -1245173, 0, 0, -1114114, 0, 0, -1179648, 0, 0, -1179642, 0, 0, -1179637, 0, 0, -1179636, 0, 0, -1179635, 0, 0, -1179634, 0, 0, -1179633, 0, 0, -1179632, 0, 0, -1179631, 0, 0, -1179630, 0, 0, -1179629, 0, 0, -1179628, 0, 0, -1179627, 0, 0, -1179626, 0, 0, -1179625, 0, 0, -1179624, 0, 0, -1179623, 0, 0, -1179622, 0, 0, -1179621, 0, 0, -1179620, 0, 0, -1179619, 0, 0, -1179618, 0, 0, -1048578, 0, 0, -1114112, 0, 0, -1114106, 0, 0, -1114082, 0, 0, -983042, 0, 0, -1048576, 0, 0, -1048570, 0, 0, -1048546, 0, 0, -917506, 0, 0, -983040, 0, 0, -983034, 0, 0, -983010, 0, 0, -851970, 0, 0, -917504, 0, 0, -917498, 0, 0, -917474, 0, 0, -786434, 0, 0, -851968, 0, 0, -851964, 0, 0, -851963, 0, 0, -851962, 0, 0, -851961, 0, 0, -851960, 0, 0, -851959, 0, 0, -851958, 0, 0, -851957, 0, 0, -851956, 0, 0, -851955, 0, 0, -851938, 0, 0, -720898, 0, 0, -786432, 0, 0, -786428, 0, 0, -786426, 0, 0, -786425, 0, 0, -786424, 0, 0, -786423, 0, 0, -786422, 0, 0, -786421, 0, 0, -786420, 0, 0, -786419, 0, 0, -786418, 0, 0, -786417, 0, 0, -786416, 0, 0, -786415, 0, 0, -786414, 0, 0, -786413, 0, 0, -786412, 0, 0, -786411, 0, 0, -786410, 0, 0, -786409, 0, 0, -786408, 0, 0, -786407, 0, 0, -786402, 0, 0, -655362, 0, 0, -720896, 0, 0, -720892, 0, 0, -720890, 0, 0, -720871, 0, 0, -720866, 0, 0, -589826, 0, 0, -655360, 0, 0, -655356, 0, 0, -655354, 0, 0, -655335, 0, 0, -655330, 0, 0, -524290, 0, 0, -589824, 0, 0, -589820, 0, 0, -589818, 0, 0, -589799, 0, 0, -589794, 0, 0, -458754, 0, 0, -524288, 0, 0, -524284, 0, 0, -524282, 0, 0, -524263, 0, 0, -524258, 0, 0, -393218, 0, 0, -458752, 0, 0, -458748, 0, 0, -458746, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -458727, 0, 0, -458722, 0, 0, -327682, 0, 0, -393216, 0, 0, -393212, 0, 0, -393210, 0, 0, -393205, 0, 0, -393198, 0, 0, -393191, 0, 0, -393186, 0, 0, -262146, 0, 0, -327680, 0, 0, -327676, 0, 0, -327674, 0, 0, -327669, 0, 0, -327662, 0, 0, -327655, 0, 0, -327650, 0, 0, -196610, 0, 0, -262144, 0, 0, -262140, 0, 0, -262138, 0, 0, -262133, 0, 0, -262126, 0, 0, -262119, 0, 0, -262114, 0, 0, -131074, 0, 0, -196608, 0, 0, -196604, 0, 0, -196602, 0, 0, -196597, 0, 0, -196590, 0, 0, -196583, 0, 0, -196578, 0, 0, -65538, 0, 0, -131072, 0, 0, -131068, 0, 0, -131066, 0, 0, -131061, 0, 0, -131054, 0, 0, -131047, 0, 0, -131042, 0, 0, -2, 0, 0, -65536, 0, 0, -65532, 0, 0, -65530, 0, 0, -65525, 0, 0, -65518, 0, 0, -65511, 0, 0, -65506, 0, 0, 65534, 0, 0, 0, 0, 0, 4, 0, 0, 11, 0, 0, 18, 0, 0, 25, 0, 0, 30, 0, 0, 131070, 0, 0, 65536, 0, 0, 65540, 0, 0, 65547, 0, 0, 65554, 0, 0, 65561, 0, 0, 65566, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131097, 0, 0, 131102, 0, 0, 196608, 0, 0, 196626, 0, 0, 196633, 0, 0, 196638, 0, 0, 262144, 0, 0, 262162, 0, 0, 262169, 0, 0, 262174, 0, 0, 327680, 0, 0, 327698, 0, 0, 327705, 0, 0, 327710, 0, 0, 393216, 0, 0, 393241, 0, 0, 393246, 0, 0, 458752, 0, 0, 458777, 0, 0, 458782, 0, 0, 524288, 0, 0, 524313, 0, 0, 524318, 0, 0, 589824, 0, 0, 589849, 0, 0, 589854, 0, 0, 655360, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655390, 0, 0, 720900, 0, 0, 720914, 0, 0, 720926, 0, 0, 786436, 0, 0, 786450, 0, 0, 786462, 0, 0, 851972, 0, 0, 851986, 0, 0, 851998, 0, 0, 917508, 0, 0, 917522, 0, 0, 917534, 0, 0, 983044, 0, 0, 983058, 0, 0, 983070, 0, 0, 1048580, 0, 0, 1048594, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0 )
+
+[node name="Next_level" parent="." instance=ExtResource( 6 )]
+position = Vector2( -8.20709, -205.135 )
+scale = Vector2( 0.279, 1 )
+next_world = "res://Scenes/MAIN MENU.tscn"

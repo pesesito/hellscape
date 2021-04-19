@@ -34,11 +34,9 @@ shadow_filter_smooth = 1.0
 
 [node name="playerKiller" type="Area2D" parent="PathFollow2D"]
 position = Vector2( 6.10352e-05, 3.05176e-05 )
-collision_mask = 9
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/playerKiller"]
 position = Vector2( 1, 0 )
 shape = SubResource( 1 )
-
-[connection signal="area_shape_entered" from="PathFollow2D/playerKiller" to="." method="_on_playerKiller_area_shape_entered"]
-[connection signal="area_shape_exited" from="PathFollow2D/playerKiller" to="." method="_on_playerKiller_area_shape_exited"]

@@ -8,10 +8,11 @@ func _ready():
 	$Control/exitButton.show()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("lowSpec"):
+	if globals.performanceMode:
 		$Lights.hide()
-	if Input.is_action_just_released("lowSpec"):
+	if not globals.performanceMode:
 		$Lights.show()
+	print(globals.performanceMode)
 
 func _on_startButton_pressed():
 # warning-ignore:return_value_discarded
@@ -48,8 +49,7 @@ func _on_trailButton_pressed():
 
 func _on_performanceMode_toggled(performanceMode):
 	if performanceMode:
-		Input.action_press("lowSpec")
 		globals.performanceMode = true
 	else:
-		Input.action_release("lowSpec")
 		globals.performanceMode = false
+

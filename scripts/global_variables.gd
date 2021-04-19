@@ -13,3 +13,4 @@ var performanceMode = false
 var gravity = 10
 var jump_force = 310
 var inverseGravity = false
+var touching_something_uwu = false
