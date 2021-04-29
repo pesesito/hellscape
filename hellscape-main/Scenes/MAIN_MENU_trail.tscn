@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/MAIN_MENU_trail.gd" type="Script" id=1]
+[ext_resource path="res://textures/UI/trailparticles.png" type="Texture" id=2]
+[ext_resource path="res://textures/UI/traillenght.png" type="Texture" id=3]
+[ext_resource path="res://textures/coolvetica rg.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://background.png" type="Texture" id=5]
+[ext_resource path="res://textures/UI/closemenu.png" type="Texture" id=6]
+[ext_resource path="res://textures/UI/default.png" type="Texture" id=7]
+[ext_resource path="res://textures/title.png" type="Texture" id=8]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[node name="Node" type="Node"]
+
+[node name="background" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 4.93242, -33.6307 )
+scale = Vector2( 6.9, 6.9 )
+texture = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 6.9, 6.9 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = -0.25
+anchor_top = -0.247
+anchor_right = 0.249
+anchor_bottom = 0.25
+margin_left = -0.297302
+margin_top = 0.300003
+margin_right = 0.302704
+margin_bottom = 1.52588e-05
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Sprite" parent="Control"]
+modulate = Color( 0.568627, 0.227451, 0.227451, 1 )
+material = SubResource( 1 )
+position = Vector2( 920.22, 170.713 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+offset = Vector2( -1034.42, -181.263 )
+
+[node name="closeMenuButton" type="Button" parent="Control"]
+margin_left = 30.0706
+margin_top = 355.636
+margin_right = 452.071
+margin_bottom = 427.636
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="traillenght" type="Sprite" parent="Control"]
+position = Vector2( 286.172, 194.105 )
+texture = ExtResource( 3 )
+
+[node name="lenght" type="LineEdit" parent="Control/traillenght"]
+margin_left = 267.0
+margin_top = -52.0
+margin_right = 490.0
+margin_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 2 )
+align = 1
+max_length = 100
+expand_to_text_length = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trailparticles" type="Sprite" parent="Control"]
+position = Vector2( 286.731, 301.691 )
+scale = Vector2( 0.829996, 0.825209 )
+texture = ExtResource( 2 )
+
+[node name="particles" type="LineEdit" parent="Control/trailparticles"]
+margin_left = 321.0
+margin_top = -54.0
+margin_right = 590.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="defaultSettings" type="Button" parent="Control"]
+margin_left = 506.095
+margin_top = 350.821
+margin_right = 784.095
+margin_bottom = 426.821
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/closeMenuButton" to="Control" method="_on_closeMenuButton_pressed"]
+[connection signal="text_changed" from="Control/traillenght/lenght" to="Control" method="_on_lenght_text_changed"]
+[connection signal="text_changed" from="Control/trailparticles/particles" to="Control" method="_on_particles_text_changed"]
+[connection signal="pressed" from="Control/defaultSettings" to="Control" method="_on_defaultSettings_pressed"]
