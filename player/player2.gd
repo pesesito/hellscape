@@ -25,16 +25,16 @@ func _ready():
 	
 	#Player Colors
 	$player.modulate = globals.playerColor
-	$particles/movement.modulate = globals.playerTrailColor
 	$particles/death.modulate = globals.playerColor
-	
+	$particles/movement.modulate = globals.playerTrailColor
+	$particles/cute_particles_uwu/rightParticles.modulate = globals.playerTrailColor
+	$particles/cute_particles_uwu/leftParticles.modulate = globals.playerTrailColor
 	
 	#Trail config
 	if int(globals.particles) >= 9999:
 		globals.particles = 9999
 	$particles/movement.set_lifetime(int(globals.lifetime))
 	$particles/movement.set_amount(int(globals.particles))
-	print("Global particles: ", globals.particles)
 	
 	
 	#Gravity
@@ -44,6 +44,8 @@ func _ready():
 	$RayCastDownRight.set_enabled(true)
 	$RayCastDownLeftUp.set_enabled(false)
 	$RayCastDownRightUp.set_enabled(false)
+
+	globals.dashOrb = false
 
 func _process(_delta):
 	
@@ -61,7 +63,21 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("main_menu"):
 # warning-ignore:return_value_discarded
+		globals.deaths += 1
 		get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
+	
+	if $RayCastLeft.is_colliding():
+		$particles/cute_particles_uwu/leftParticles.set_emitting(true)
+		if is_on_floor() or is_on_ceiling():
+			$particles/cute_particles_uwu/leftParticles.set_emitting(false)
+	else:
+		$particles/cute_particles_uwu/leftParticles.set_emitting(false)
+	if $RayCastRight.is_colliding():
+		$particles/cute_particles_uwu/rightParticles.set_emitting(true)
+		if is_on_floor() or is_on_ceiling():
+			$particles/cute_particles_uwu/rightParticles.set_emitting(false)
+	else:
+		$particles/cute_particles_uwu/rightParticles.set_emitting(false)
 
 func _physics_process(_delta):
 	
@@ -86,7 +102,7 @@ func _physics_process(_delta):
 	
 	# Player physics code
 	
-	if Debug == false:
+	if not Debug:
 		motion.y += gravity
 		motion.y = min(motion.y, max_fall_speed)
 	
@@ -104,9 +120,13 @@ func _physics_process(_delta):
 		if Debug == true and not _pressing_movement():
 			motion.x = 0
 		
-		if _is_in_floor() or _is_in_ceiling():
+		if _is_in_floor() or _is_in_ceiling() or globals.jumpOrb == true:
 			if Input.is_action_just_pressed("ui_up"):
-				motion.y = jump_force
+				if globals.jumpOrb == true:
+					motion.y = jump_force * 1.5
+				else:
+					motion.y = jump_force
+				
 		if not _pressing_movement() and not dead:
 			if is_on_floor() or _is_in_ceiling():
 				motion.x = lerp(motion.x, 0, 0.25)
@@ -181,6 +201,10 @@ func _on_Timer_timeout():
 	get_tree().reload_current_scene()
 	$particles/death.set_emitting(false)
 
+func reqs():
+	return not globals.dont_kill or dead
+
 func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
-	if not Input.is_action_pressed("gravity") and not dead:
+	if reqs() == true:
 		death()
+		globals.deaths += 1

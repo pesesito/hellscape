@@ -20,7 +20,7 @@ func _on_closeMenuButton_pressed():
 	get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
 
 func _on_defaultSettings_pressed():
-	$traillenght/lenght.set_text("5")
-	$trailparticles/particles.set_text("30")
-	globals.lifetime = 5
-	globals.particles = 30
+	$traillenght/lenght.set_text("30")
+	$trailparticles/particles.set_text("5")
+	globals.lifetime = 30
+	globals.particles = 5 

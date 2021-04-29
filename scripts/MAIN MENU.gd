@@ -1,5 +1,7 @@
 extends Node
 
+var save_path = "user://Hellscape/Saves"
+
 func _ready():
 	$Control/settings.hide()
 	$Control/title.show()
@@ -12,11 +14,10 @@ func _process(_delta):
 		$Lights.hide()
 	if not globals.performanceMode:
 		$Lights.show()
-	print(globals.performanceMode)
 
 func _on_startButton_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Levels/Level 0.tscn")
+	get_tree().change_scene(globals.current_level)
 
 func _on_settingsButton_pressed():
 	$Control/title.hide()
