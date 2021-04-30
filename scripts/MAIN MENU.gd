@@ -1,7 +1,5 @@
 extends Node
 
-var save_path = "user://Hellscape/Saves"
-
 func _ready():
 	$Control/settings.hide()
 	$Control/title.show()

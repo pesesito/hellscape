@@ -33,7 +33,7 @@ position = Vector2( -882.878, 567.844 )
 curve = SubResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88.0507, 3.64874 )
+position = Vector2( 88.6138, 3.08622 )
 
 [node name="saw" type="Node" parent="."]
 
@@ -334,6 +334,8 @@ tile_data = PoolIntArray( -3473413, 0, 0, -3473412, 0, 0, -3473411, 0, 0, -34734
 [node name="Next_level" parent="." instance=ExtResource( 6 )]
 position = Vector2( 8.18827, -782.099 )
 scale = Vector2( 0.279, 1 )
-next_world = "res://Scenes/MAIN MENU.tscn"
+next_world = "res://Scenes/Levels/Level 4.tscn"
 
 [node name="Saver" parent="." instance=ExtResource( 8 )]
+
+[editable path="portals/PortalGravity4"]

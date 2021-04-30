@@ -139,7 +139,7 @@ func _physics_process(_delta):
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y = jump_force
 				motion.x += speed * 6.9
-		elif $RayCastRight.is_colliding() and Input.is_action_pressed("ui_right") or Input.is_action_just_pressed("ui_left"):
+		else: if $RayCastRight.is_colliding() and Input.is_action_pressed("ui_right") or Input.is_action_just_pressed("ui_left"):
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y = jump_force
 				motion.x += -speed * 6.9
@@ -155,9 +155,9 @@ func _physics_process(_delta):
 		$Area2D/CollisionShape2D.disabled = true
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = -200
-		elif Input.is_action_just_pressed("ui_down"):
+		else: if Input.is_action_just_pressed("ui_down"):
 			motion.y = 200
-		elif not _pressing_movement_vertical():
+		else: if not _pressing_movement_vertical():
 			motion.y = 0
 	
 	motion = move_and_slide(motion, UP)
@@ -194,7 +194,7 @@ func death():
 	dead = true
 	$particles/death.set_emitting(true)
 	$deathTimer.start()
-	$Light2D.energy = 2
+	$Light2D.energy = 0.25
 
 func _on_Timer_timeout():
 # warning-ignore:return_value_discarded
@@ -202,9 +202,9 @@ func _on_Timer_timeout():
 	$particles/death.set_emitting(false)
 
 func reqs():
-	return not globals.dont_kill or dead
+	return not globals.dont_kill
 
 func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
-	if reqs() == true:
+	if reqs() and not dead:
 		death()
 		globals.deaths += 1
