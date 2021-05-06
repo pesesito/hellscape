@@ -51,4 +51,3 @@ func _on_performanceMode_toggled(performanceMode):
 		globals.performanceMode = true
 	else:
 		globals.performanceMode = false
-

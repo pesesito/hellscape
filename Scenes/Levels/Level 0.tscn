@@ -33,9 +33,6 @@ curve = SubResource( 1 )
 position = Vector2( -18.2726, -9.70296 )
 z_index = 1
 
-[node name="Light2D" parent="KinematicBody2D" index="5"]
-color = Color( 0.447059, 0.431373, 0.713726, 1 )
-
 [node name="saw" type="Node" parent="."]
 
 [node name="Area2D2" parent="saw" instance=ExtResource( 3 )]

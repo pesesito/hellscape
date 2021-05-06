@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/save_script.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/speed_controller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/jumpOrb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/saw.tscn" type="PackedScene" id=6]
+
+[node name="Main" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50.1937, 17.6322 )
+
+[node name="Saver" parent="." instance=ExtResource( 2 )]
+position = Vector2( -347.517, 351.349 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -262148, 0, 0, -262147, 0, 0, -196612, 0, 0, -196611, 0, 0, -131076, 0, 0, -131075, 0, 0, -65540, 0, 0, -65539, 0, 0, -4, 0, 0, -3, 0, 0, 65532, 0, 0, 65533, 0, 0, 131068, 0, 0, 131069, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0 )
+
+[node name="orbs" type="Node2D" parent="."]
+
+[node name="jumpOrb" parent="orbs" instance=ExtResource( 5 )]
+position = Vector2( 153.959, -22.7256 )
+
+[node name="CollisionShape2D" parent="orbs/jumpOrb" index="0"]
+position = Vector2( -95.3803, -43.8588 )
+
+[node name="Sprite" parent="orbs/jumpOrb" index="1"]
+visible = false
+
+[node name="Particles2D" parent="orbs/jumpOrb" index="2"]
+visible = false
+
+[node name="saws" type="Node" parent="."]
+
+[node name="saw" parent="." instance=ExtResource( 6 )]
+position = Vector2( 155.74, 28.3733 )
+
+[node name="SpeedModifier" parent="." instance=ExtResource( 4 )]
+position = Vector2( 272.079, -40.7759 )
+
+[editable path="orbs/jumpOrb"]

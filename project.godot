@@ -19,6 +19,7 @@ boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
+config/max_log_files=5
 
 [autoload]
 
@@ -118,6 +119,11 @@ dashOrb={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
+"slow time"={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -129,6 +135,7 @@ dashOrb={
 
 file_logging/enable_file_logging=true
 file_logging/log_path="user://Hellscape/Logs/Logs"
+file_logging/max_log_files=1
 
 [physics]
 

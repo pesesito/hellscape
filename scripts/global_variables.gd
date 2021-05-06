@@ -22,3 +22,5 @@ var jumpOrb = false
 var dashOrb = false
 
 var current_level = "res://Scenes/Levels/Level 0.tscn"
+
+var dead = false
