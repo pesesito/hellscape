@@ -38,4 +38,9 @@ Game is still on early development, so expect bugs, parts of the levels that you
 
 ![gif6](https://github.com/pesesito/hellscape/blob/main/Assets/asset%206.gif?raw=true)
 
-I know my coding is bad.
+# Music
+**In the source code there aren't any songs included, if you want to include songs, you can:**
+*  Download the source code and make a "Songs" folder and put the music there and compile the game.
+
+**Or if you dont want to recompile the game and just add new music you can:**
+*  Go to "%AppData%/Hellscape/Songs" and put your songs there.
