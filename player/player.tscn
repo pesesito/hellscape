@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://player/player2.gd" type="Script" id=1]
 [ext_resource path="res://textures/tileset.png" type="Texture" id=2]
 [ext_resource path="res://textures/light.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/death_counter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/Scenes/death_sounds.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -82,6 +83,15 @@ light_mode = 1
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 7.9, 7.9 )
 
+[sub_resource type="Environment" id=12]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 2.57
+glow_strength = 0.73
+glow_bloom = 0.5
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+
 [node name="player" type="KinematicBody2D"]
 position = Vector2( 0, 0.445446 )
 collision_mask = 7
@@ -110,6 +120,7 @@ process_material = SubResource( 4 )
 
 [node name="death" type="Particles2D" parent="particles"]
 material = SubResource( 5 )
+z_index = 6
 emitting = false
 amount = 500
 one_shot = true
@@ -214,6 +225,11 @@ margin_left = -205.731
 margin_top = -105.931
 margin_right = 90.2694
 margin_bottom = 48.0689
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 5 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 12 )
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_Timer_timeout"]

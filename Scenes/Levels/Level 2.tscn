@@ -30,6 +30,9 @@ speed = 220
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 87.8607, -181.921 )
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
 [node name="saw" type="Node" parent="."]
 
 [node name="saw" parent="saw" instance=ExtResource( 4 )]
@@ -339,9 +342,6 @@ rotation = 0.212632
 [node name="saw44" parent="saw" instance=ExtResource( 4 )]
 position = Vector2( 293.107, 288.686 )
 rotation = 0.212632
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0, 0, 0, 1 )
 
 [node name="portals" type="Node" parent="."]
 

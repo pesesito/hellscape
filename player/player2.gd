@@ -49,6 +49,8 @@ func _ready():
 
 func _process(_delta):
 	
+	print(motion.x)
+	
 	# Check if you have debug on or off, and if you are dead
 	
 	if Input.is_action_just_pressed("debug"):
@@ -128,10 +130,11 @@ func _physics_process(_delta):
 					motion.y = jump_force
 				
 		if not _pressing_movement() and not dead:
-			if is_on_floor() or _is_in_ceiling():
-				motion.x = lerp(motion.x, 0, 0.25)
-			if not is_on_floor():
-				motion.x = lerp(motion.x, 0, 0.05)
+			if not dead:
+				if is_on_floor() or _is_in_ceiling():
+					motion.x = lerp(motion.x, 0, 0.25)
+				if not is_on_floor():
+					motion.x = lerp(motion.x, 0, 0.05)
 	
 	if _next_to_wall() and not is_on_floor():
 		if $RayCastLeft.is_colliding() and Input.is_action_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):

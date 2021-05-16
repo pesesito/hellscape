@@ -30,7 +30,7 @@ position = Vector2( -145, 0 )
 curve = SubResource( 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( -18.2726, -9.70296 )
+position = Vector2( -15.2652, 0.161836 )
 z_index = 1
 
 [node name="saw" type="Node" parent="."]

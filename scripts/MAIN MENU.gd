@@ -51,3 +51,6 @@ func _on_performanceMode_toggled(performanceMode):
 		globals.performanceMode = true
 	else:
 		globals.performanceMode = false
+
+func _on_levelSelector_pressed():
+	get_tree().change_scene("res://Scenes/Levels/Level selector.tscn")
