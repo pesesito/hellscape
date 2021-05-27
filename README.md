@@ -9,7 +9,7 @@ You need to to escape the darkness.
 
 ![gif1](https://github.com/pesesito/hellscape/blob/main/Assets/asset%201.gif?raw=true)
 
-How to I escape?
+How do I escape?
 
 You need to run as fast as you can through a series of levels.
 
