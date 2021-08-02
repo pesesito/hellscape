@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[Progressive House] Hinkik - Guardian (Original Mix).mp3-4146108a0cc1e7fe5fec7ab72437b019.mp3str"
+
+[deps]
+
+source_file="res://Songs/[Progressive House] Hinkik - Guardian (Original Mix).mp3"
+dest_files=[ "res://.import/[Progressive House] Hinkik - Guardian (Original Mix).mp3-4146108a0cc1e7fe5fec7ab72437b019.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

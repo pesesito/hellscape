@@ -8,8 +8,9 @@ func _ready():
 	var directory = Directory.new()
 	directory.make_dir("user://Songs")
 	get_filelist("res://Songs/")
+# warning-ignore:return_value_discarded
 	get_filelist("user://Songs")
-	_play_song()
+	play_song()
 
 func get_filelist(scan_dir : String) -> Array:
 	var dir := Directory.new()
@@ -32,26 +33,30 @@ func get_filelist(scan_dir : String) -> Array:
 
 	return songs
 
-func _play_song():
-	var n = rand_range(0, 30)
-	n = round(n)
-	if ".import" in songs[n]:
-		_play_song()
-	else: 
-		var song = load(songs[n])
-		if song == lastSong:
-			_play_song()
-		else:
-			$Music.stream = song
-			$Music.play()
-			var length = $Music.stream.get_length()
-			$Music/Timer.wait_time = length
-			$Music.volume_db = -12
-			lastSong = song
+func play_song():
+	if globals.music:
+		var n = rand_range(0, 14)
+		n = round(n)
+		if ".import" in songs[n]:
+			play_song()
+		else: 
+			var song = load(songs[n])
+			if song == lastSong:
+				play_song()
+			else:
+				$Music.stream = song
+				$Music.play()
+				var length = $Music.stream.get_length()
+				$Music/Timer.wait_time = length
+				$Music.volume_db = -12
+				lastSong = song
 
 func _process(_delta):
 	if Input.is_action_just_pressed("nextSong"):
-		_play_song()
+		play_song()
+	if Input.is_action_just_pressed("stopMusic"):
+		$Music.stop()
+		globals.music = false
 
 func _on_Timer_timeout():
-	_play_song()
+	play_song()

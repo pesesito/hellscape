@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hinkik & A Himitsu - Realms.mp3-80957540d22babaf93efba028bbeba32.mp3str"
+
+[deps]
+
+source_file="res://Songs/Hinkik & A Himitsu - Realms.mp3"
+dest_files=[ "res://.import/Hinkik & A Himitsu - Realms.mp3-80957540d22babaf93efba028bbeba32.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

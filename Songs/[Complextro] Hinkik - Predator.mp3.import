@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[Complextro] Hinkik - Predator.mp3-6f0d917aea07c0da674b66142e2c8471.mp3str"
+
+[deps]
+
+source_file="res://Songs/[Complextro] Hinkik - Predator.mp3"
+dest_files=[ "res://.import/[Complextro] Hinkik - Predator.mp3-6f0d917aea07c0da674b66142e2c8471.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

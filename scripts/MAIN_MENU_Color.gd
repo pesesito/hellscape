@@ -14,4 +14,5 @@ func _on_playerTrailPicker_color_changed(trailColor):
 
 func _on_closeMenuButton_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
+	get_tree().change_scene("res://Scenes/MAIN-MENUS/MAIN MENU.tscn")
+	globals.menu_back = true

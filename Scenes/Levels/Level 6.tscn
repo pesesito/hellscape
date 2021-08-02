@@ -14,21 +14,126 @@
 [node name="Saver" parent="." instance=ExtResource( 10 )]
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 176.28, 205.775 )
+position = Vector2( 118.34, 222.84 )
 rotation = 0.785398
 scale = Vector2( 69, 69 )
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 95.1562, 50.8917 )
-
-[node name="player2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119.339, -42.5276 )
+position = Vector2( 40.9392, -87.6966 )
 
 [node name="saw" type="Node" parent="."]
 
 [node name="saw" parent="saw" instance=ExtResource( 4 )]
-position = Vector2( 164.913, -135.624 )
+position = Vector2( 179.413, -135.624 )
+
+[node name="saw2" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 191.913, -103.624 )
+
+[node name="saw3" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 193.913, -37.874 )
+
+[node name="saw8" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 83.7874, -98.1808 )
+
+[node name="saw9" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 120.936, -100.237 )
+
+[node name="saw10" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 156.52, -101.992 )
+
+[node name="saw11" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 256.904, -256.673 )
+
+[node name="saw12" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 256.904, -289.746 )
+
+[node name="saw4" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 268.913, -37.624 )
+
+[node name="saw5" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 270.663, -101.624 )
+
+[node name="saw6" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 266.413, -165.624 )
+
+[node name="saw7" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 193.018, -165.745 )
+
+[node name="saw13" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 289.075, 88.7351 )
+
+[node name="saw14" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 323.82, 89.1806 )
+
+[node name="saw15" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 358.565, 89.1806 )
+
+[node name="saw16" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 393.31, 89.1806 )
+
+[node name="saw17" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 428.055, 89.1806 )
+
+[node name="saw18" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 463.246, 88.7351 )
+
+[node name="saw19" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 499.327, 89.1806 )
+
+[node name="saw20" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 534.963, 88.7351 )
+
+[node name="saw21" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 570.154, 88.7351 )
+
+[node name="saw22" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 569.461, 51.076 )
+
+[node name="saw23" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 569.064, 12.9784 )
+
+[node name="saw24" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 569.064, -23.1349 )
+
+[node name="saw25" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 569.36, -63.2585 )
+
+[node name="saw26" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 568.667, -100.918 )
+
+[node name="saw27" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 568.27, -139.015 )
+
+[node name="saw28" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 568.27, -175.129 )
+
+[node name="saw29" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 568.472, -213.147 )
+
+[node name="saw30" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 567.779, -250.806 )
+
+[node name="saw31" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 567.382, -288.903 )
+
+[node name="saw32" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 567.382, -325.017 )
+
+[node name="saw33" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 567.678, -365.14 )
+
+[node name="saw34" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 566.985, -402.799 )
+
+[node name="saw35" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 566.588, -440.897 )
+
+[node name="saw36" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 566.588, -477.01 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.282353, 0.282353, 0.282353, 1 )
@@ -36,7 +141,7 @@ color = Color( 0.282353, 0.282353, 0.282353, 1 )
 [node name="portals" type="Node" parent="."]
 
 [node name="PortalGravity4" parent="portals" instance=ExtResource( 7 )]
-position = Vector2( 15.9471, 88.4723 )
+position = Vector2( 74.2182, 134.554 )
 rotation = 1.57079
 scale = Vector2( 0.53, 0.53 )
 
@@ -57,10 +162,10 @@ scale = Vector2( 0.369, 0.369 )
 [node name="JumpOrb" type="Node2D" parent="."]
 
 [node name="jumpOrb" parent="JumpOrb" instance=ExtResource( 8 )]
-position = Vector2( 292.691, -19.0604 )
+position = Vector2( 289.248, -1.04953 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
-tile_data = PoolIntArray( 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0 )
+tile_data = PoolIntArray( -2162679, 0, 0, -2097143, 0, 0, -2031607, 0, 0, -1966071, 0, 0, -1900539, 0, 0, -1900535, 0, 0, -1835003, 0, 0, -1834999, 0, 0, -1769467, 0, 0, -1769463, 0, 0, -1703931, 0, 0, -1703927, 0, 0, -1638395, 0, 0, -1638391, 0, 0, -1638390, 0, 0, -1638389, 0, 0, -1638388, 0, 0, -1638387, 0, 0, -1638386, 0, 0, -1638385, 0, 0, -1638384, 0, 0, -1572859, 0, 0, -1572848, 0, 0, -1507323, 0, 0, -1507312, 0, 0, -1441787, 0, 0, -1441776, 0, 0, -1376251, 0, 0, -1376240, 0, 0, -1310715, 0, 0, -1310714, 0, 0, -1310713, 0, 0, -1310712, 0, 0, -1310711, 0, 0, -1310710, 0, 0, -1310704, 0, 0, -983028, 0, 0, -983027, 0, 0, -983026, 0, 0, -983025, 0, 0, -983024, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -393215, 0, 0, -393213, 0, 0, -327679, 0, 0, -327677, 0, 0, -262143, 0, 0, -262141, 0, 0, -196607, 0, 0, -196605, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -131071, 0, 0, -131069, 0, 0, -65535, 0, 0, -65533, 0, 0, 1, 0, 0, 3, 0, 0, 65537, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0 )
 
 [node name="Next_level" parent="." instance=ExtResource( 6 )]
 position = Vector2( 392.389, -361.79 )

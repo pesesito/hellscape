@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[Electro House] Hinkik - Rabado (Original Mix).mp3-46eaab2e22e9be0c0f0a3424df32cafa.mp3str"
+
+[deps]
+
+source_file="res://Songs/[Electro House] Hinkik - Rabado (Original Mix).mp3"
+dest_files=[ "res://.import/[Electro House] Hinkik - Rabado (Original Mix).mp3-46eaab2e22e9be0c0f0a3424df32cafa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

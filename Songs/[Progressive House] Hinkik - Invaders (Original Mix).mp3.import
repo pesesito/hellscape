@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[Progressive House] Hinkik - Invaders (Original Mix).mp3-9573d0192cb1f8d698f8a8198ea76ea2.mp3str"
+
+[deps]
+
+source_file="res://Songs/[Progressive House] Hinkik - Invaders (Original Mix).mp3"
+dest_files=[ "res://.import/[Progressive House] Hinkik - Invaders (Original Mix).mp3-9573d0192cb1f8d698f8a8198ea76ea2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[Drumstep] Hinkik - Blade.mp3-6a3e1363160c496314388c80d66a6984.mp3str"
+
+[deps]
+
+source_file="res://Songs/[Drumstep] Hinkik - Blade.mp3"
+dest_files=[ "res://.import/[Drumstep] Hinkik - Blade.mp3-6a3e1363160c496314388c80d66a6984.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

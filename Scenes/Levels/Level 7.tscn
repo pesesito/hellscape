@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/saw.tscn" type="PackedScene" id=4]
+[ext_resource path="res://background.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Objects/next level.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/PortalGravity.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/jumpOrb.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/save_script.tscn" type="PackedScene" id=10]
+
+[node name="Node" type="Node"]
+
+[node name="Saver" parent="." instance=ExtResource( 10 )]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 176.28, 205.775 )
+rotation = 0.785398
+scale = Vector2( 69, 69 )
+texture = ExtResource( 5 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 95.1562, 50.8917 )
+
+[node name="saw" type="Node" parent="."]
+
+[node name="saw" parent="saw" instance=ExtResource( 4 )]
+position = Vector2( 164.913, -135.624 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.282353, 0.282353, 0.282353, 1 )
+
+[node name="portals" type="Node" parent="."]
+
+[node name="PortalGravity4" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 15.9471, 88.4723 )
+rotation = 1.57079
+scale = Vector2( 0.53, 0.53 )
+
+[node name="PortalGravity5" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( -63.3924, -4.38226 )
+rotation = 1.57079
+scale = Vector2( 0.53, 0.53 )
+
+[node name="PortalGravity7" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 288.102, -385.308 )
+rotation = 1.57079
+scale = Vector2( 0.53, 0.53 )
+
+[node name="PortalGravity6" parent="portals" instance=ExtResource( 7 )]
+position = Vector2( 129.027, -424.742 )
+scale = Vector2( 0.369, 0.369 )
+
+[node name="JumpOrb" type="Node2D" parent="."]
+
+[node name="jumpOrb" parent="JumpOrb" instance=ExtResource( 8 )]
+position = Vector2( 292.691, -19.0604 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0 )
+
+[node name="Next_level" parent="." instance=ExtResource( 6 )]
+position = Vector2( 392.389, -361.79 )
+scale = Vector2( 0.213, 1 )
+next_world = "res://Scenes/MAIN MENU.tscn"

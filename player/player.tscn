@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://player/player2.gd" type="Script" id=1]
 [ext_resource path="res://textures/tileset.png" type="Texture" id=2]
@@ -76,6 +76,30 @@ scale_random = 1.0
 hue_variation = 0.1
 hue_variation_random = 1.0
 
+[sub_resource type="ParticlesMaterial" id=13]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 6.708, 1, 1 )
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+spread = 90.0
+gravity = Vector3( 0, -98, 0 )
+initial_velocity_random = 1.0
+angular_velocity = 720.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+radial_accel = 72.73
+radial_accel_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.56
+scale_random = 1.0
+hue_variation = 0.11
+hue_variation_random = 1.0
+
 [sub_resource type="CanvasItemMaterial" id=10]
 blend_mode = 1
 light_mode = 1
@@ -150,6 +174,16 @@ speed_scale = 2.0
 local_coords = false
 process_material = SubResource( 9 )
 
+[node name="Particles2D" type="Particles2D" parent="particles/cute_particles_uwu"]
+position = Vector2( 0, 8 )
+emitting = false
+amount = 6656
+lifetime = 6.0
+explosiveness = 1.0
+fract_delta = false
+local_coords = false
+process_material = SubResource( 13 )
+
 [node name="player" type="Sprite" parent="."]
 light_mask = 0
 material = SubResource( 10 )
@@ -217,8 +251,12 @@ rotation = 1.5708
 enabled = true
 cast_to = Vector2( -25, 0 )
 
-[node name="deathTimer" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="deathTimer" type="Timer" parent="Timers"]
 one_shot = true
+
+[node name="floorTimer" type="Timer" parent="Timers"]
 
 [node name="Control" parent="." instance=ExtResource( 4 )]
 margin_left = -205.731
@@ -232,4 +270,4 @@ margin_bottom = 48.0689
 environment = SubResource( 12 )
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
-[connection signal="timeout" from="deathTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timers/deathTimer" to="." method="_on_Timer_timeout"]

@@ -24,3 +24,7 @@ var dashOrb = false
 var current_level = "res://Scenes/Levels/Level 0.tscn"
 
 var dead = false
+
+var menu_back = false
+
+var music = false

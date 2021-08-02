@@ -18,7 +18,7 @@ var nextlevel = false
 var Debug = false
 
 func _ready():
-	# Initial Variales
+	# Initial Stuff
 	$Collision.disabled = false
 	dead = false
 	nextlevel = false
@@ -49,8 +49,6 @@ func _ready():
 
 func _process(_delta):
 	
-	print(motion.x)
-	
 	# Check if you have debug on or off, and if you are dead
 	
 	if Input.is_action_just_pressed("debug"):
@@ -66,22 +64,11 @@ func _process(_delta):
 	if Input.is_action_just_pressed("main_menu"):
 # warning-ignore:return_value_discarded
 		globals.deaths += 1
-		get_tree().change_scene("res://Scenes/MAIN MENU.tscn")
-	
-	if $RayCastLeft.is_colliding():
-		$particles/cute_particles_uwu/leftParticles.set_emitting(true)
-		if is_on_floor() or is_on_ceiling():
-			$particles/cute_particles_uwu/leftParticles.set_emitting(false)
-	else:
-		$particles/cute_particles_uwu/leftParticles.set_emitting(false)
-	if $RayCastRight.is_colliding():
-		$particles/cute_particles_uwu/rightParticles.set_emitting(true)
-		if is_on_floor() or is_on_ceiling():
-			$particles/cute_particles_uwu/rightParticles.set_emitting(false)
-	else:
-		$particles/cute_particles_uwu/rightParticles.set_emitting(false)
+		get_tree().change_scene("res://Scenes/MAIN-MENUS/MAIN MENU.tscn")
 
 func _physics_process(_delta):
+	
+	_particles()
 	
 	#Gravity Inversion
 	
@@ -101,6 +88,14 @@ func _physics_process(_delta):
 			$RayCastDownRight.set_enabled(true)
 			$RayCastDownLeftUp.set_enabled(false)
 			$RayCastDownRightUp.set_enabled(false)
+	
+	var i
+	if is_on_floor() and i == 1:
+		$particles/cute_particles_uwu/Particles2D.set_emitting(true)
+		i = 0
+	else:
+		$particles/cute_particles_uwu/Particles2D.set_emitting(false) 
+		i = 1
 	
 	# Player physics code
 	
@@ -182,9 +177,8 @@ func _is_in_floor():
 func _is_in_ceiling():
 	return $RayCastDownLeftUp.is_colliding() or $RayCastDownRightUp.is_colliding()
 
-
 # warning-ignore:function_conflicts_variable
-func nextlevel():
+func _nextlevel():
 	dead = false
 	nextlevel = true
 	$Colision.disabled = true
@@ -192,22 +186,41 @@ func nextlevel():
 	$AnimatedSprite.visible = false
 	$NextLevel.visible = true
 
-func death():
+func _death():
 	motion.y = globals.jump_force * 1.5
 	dead = true
+	Input.action_press("dead")
 	$particles/death.set_emitting(true)
-	$deathTimer.start()
+	$Timers/deathTimer.start()
 	$Light2D.energy = 0.25
 
 func _on_Timer_timeout():
 # warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	$particles/death.set_emitting(false)
+	Input.action_release("dead")
 
-func reqs():
+func _reqs():
 	return not globals.dont_kill
 
 func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
-	if reqs() and not dead:
-		death()
+	if _reqs() and not dead:
+		_death()
 		globals.deaths += 1
+
+func _particles():
+	if $RayCastLeft.is_colliding():
+		$particles/cute_particles_uwu/leftParticles.set_emitting(true)
+		if is_on_floor() or is_on_ceiling():
+			$particles/cute_particles_uwu/leftParticles.set_emitting(false)
+	else:
+		$particles/cute_particles_uwu/leftParticles.set_emitting(false)
+	
+	if $RayCastRight.is_colliding():
+		$particles/cute_particles_uwu/rightParticles.set_emitting(true)
+		if is_on_floor() or is_on_ceiling():
+			$particles/cute_particles_uwu/rightParticles.set_emitting(false)
+	else:
+		$particles/cute_particles_uwu/rightParticles.set_emitting(false)
+	
+	
