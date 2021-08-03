@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/MAIN MENU.gd" type="Script" id=1]
 [ext_resource path="res://textures/UI/start.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://textures/UI/on.png" type="Texture" id=12]
 [ext_resource path="res://textures/UI/fullscreen.png" type="Texture" id=13]
 [ext_resource path="res://textures/UI/colorCustomize.png" type="Texture" id=14]
+[ext_resource path="res://textures/UI/music.png" type="Texture" id=15]
 [ext_resource path="res://textures/title.png" type="Texture" id=16]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Objects/saw.tscn" type="PackedScene" id=18]
@@ -49,7 +50,7 @@ blend_mode = 1
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( -9.36279, -12.7111 )
+position = Vector2( -8.41894, -12.7111 )
 scale = Vector2( 420, 420 )
 texture = ExtResource( 11 )
 
@@ -144,7 +145,7 @@ shadow_filter = 1
 shadow_filter_smooth = 29.5
 
 [node name="Light2D4" type="Light2D" parent="Lights"]
-position = Vector2( -182.605, 4.48986 )
+position = Vector2( -186.381, 2.6021 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 7 )
 color = Color( 0.447059, 0.431373, 0.713726, 1 )
@@ -260,12 +261,27 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="musicButton" type="CheckButton" parent="Control/settings"]
+material = SubResource( 5 )
+anchor_left = 7.3209
+anchor_top = -8.02787
+anchor_right = 11.6209
+anchor_bottom = -6.75288
+custom_icons/off = ExtResource( 5 )
+custom_icons/on = ExtResource( 12 )
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="fullscreenButton" type="CheckButton" parent="Control/settings"]
 material = SubResource( 5 )
 anchor_left = 6.44285
-anchor_top = -6.57317
+anchor_top = -6.5919
 anchor_right = 12.2178
-anchor_bottom = -5.52318
+anchor_bottom = -5.54191
 custom_icons/off = ExtResource( 5 )
 custom_icons/on = ExtResource( 12 )
 icon = ExtResource( 13 )
@@ -342,6 +358,7 @@ zoom = Vector2( 0.5, 0.5 )
 [connection signal="pressed" from="Control/levelSelector" to="." method="_on_levelSelector_pressed"]
 [connection signal="pressed" from="Control/settingsButton" to="." method="_on_settingsButton_pressed"]
 [connection signal="pressed" from="Control/exitButton" to="." method="_on_exitButton_pressed"]
+[connection signal="toggled" from="Control/settings/musicButton" to="." method="_on_musicButton_toggled"]
 [connection signal="toggled" from="Control/settings/fullscreenButton" to="." method="_on_fullscreenButton_toggled"]
 [connection signal="pressed" from="Control/settings/closemenuButton" to="." method="_on_closemenuButton_pressed"]
 [connection signal="pressed" from="Control/settings/colorPicker" to="." method="_on_colorPicker_pressed"]

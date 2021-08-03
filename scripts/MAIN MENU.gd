@@ -32,10 +32,11 @@ func settings():
 	$Control/levelSelector.hide()
 
 func _on_fullscreenButton_toggled(button_pressed):
-	if button_pressed == true:
-		OS.window_fullscreen = !OS.window_fullscreen
-	else:
-		OS.window_fullscreen = !OS.window_fullscreen
+	match(button_pressed):
+		true:
+			OS.window_fullscreen = !OS.window_fullscreen
+		false:
+			OS.window_fullscreen = !OS.window_fullscreen
 
 func _on_closemenuButton_pressed():
 	$Control/title.show()
@@ -56,10 +57,11 @@ func _on_trailButton_pressed():
 	get_tree().change_scene("res://Scenes/MAIN-MENUS/MAIN_MENU_trail.tscn")
 
 func _on_performanceMode_toggled(performanceMode):
-	if performanceMode:
-		globals.performanceMode = true
-	else:
-		globals.performanceMode = false
+	match(performanceMode):
+		true:
+			globals.performanceMode = true
+		false:
+			globals.performanceMode = false
 
 func _on_levelSelector_pressed():
 # warning-ignore:return_value_discarded
@@ -68,3 +70,10 @@ func _on_levelSelector_pressed():
 func _on_audioButton_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/MAIN-MENUS/MAIN_MENU_Sound.tscn")
+
+func _on_musicButton_toggled(button_pressed):
+	match(button_pressed):
+		true:
+			globals.music = true
+		false:
+			globals.music = false

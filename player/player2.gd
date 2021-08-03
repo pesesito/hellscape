@@ -73,29 +73,21 @@ func _physics_process(_delta):
 	#Gravity Inversion
 	
 	if Input.is_action_pressed("gravity"):
-		if globals.inverseGravity == true:
-			gravity = -globals.gravity
-			jump_force = globals.jump_force
-			$RayCastDownLeft.set_enabled(false)
-			$RayCastDownRight.set_enabled(false)
-			$RayCastDownLeftUp.set_enabled(true)
-			$RayCastDownRightUp.set_enabled(true)
-			
-		elif globals.inverseGravity == false:
-			gravity = globals.gravity
-			jump_force = -globals.jump_force
-			$RayCastDownLeft.set_enabled(true)
-			$RayCastDownRight.set_enabled(true)
-			$RayCastDownLeftUp.set_enabled(false)
-			$RayCastDownRightUp.set_enabled(false)
-	
-	var i
-	if is_on_floor() and i == 1:
-		$particles/cute_particles_uwu/Particles2D.set_emitting(true)
-		i = 0
-	else:
-		$particles/cute_particles_uwu/Particles2D.set_emitting(false) 
-		i = 1
+		match(globals.inverseGravity):
+			true:
+				gravity = -globals.gravity
+				jump_force = globals.jump_force
+				$RayCastDownLeft.set_enabled(false)
+				$RayCastDownRight.set_enabled(false)
+				$RayCastDownLeftUp.set_enabled(true)
+				$RayCastDownRightUp.set_enabled(true)
+			false: 
+				gravity = globals.gravity
+				jump_force = -globals.jump_force
+				$RayCastDownLeft.set_enabled(true)
+				$RayCastDownRight.set_enabled(true)
+				$RayCastDownLeftUp.set_enabled(false)
+				$RayCastDownRightUp.set_enabled(false)
 	
 	# Player physics code
 	
@@ -137,7 +129,7 @@ func _physics_process(_delta):
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y = jump_force
 				motion.x += speed * 6.9
-		else: if $RayCastRight.is_colliding() and Input.is_action_pressed("ui_right") or Input.is_action_just_pressed("ui_left"):
+		elif $RayCastRight.is_colliding() and Input.is_action_pressed("ui_right") or Input.is_action_just_pressed("ui_left"):
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y = jump_force
 				motion.x += -speed * 6.9
@@ -153,9 +145,9 @@ func _physics_process(_delta):
 		$Area2D/CollisionShape2D.disabled = true
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = -200
-		else: if Input.is_action_just_pressed("ui_down"):
+		elif Input.is_action_just_pressed("ui_down"):
 			motion.y = 200
-		else: if not _pressing_movement_vertical():
+		elif not _pressing_movement_vertical():
 			motion.y = 0
 	
 	motion = move_and_slide(motion, UP)
