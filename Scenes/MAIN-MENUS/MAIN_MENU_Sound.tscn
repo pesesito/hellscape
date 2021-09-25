@@ -90,7 +90,7 @@ margin_top = 201.587
 margin_right = 752.366
 margin_bottom = 217.587
 custom_icons/grabber = ExtResource( 4 )
-min_value = -40.0
+min_value = -60.0
 max_value = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -103,7 +103,7 @@ margin_top = 322.2
 margin_right = 751.617
 margin_bottom = 338.2
 custom_icons/grabber = ExtResource( 4 )
-min_value = -40.0
+min_value = -60.0
 max_value = 40.0
 __meta__ = {
 "_edit_use_anchors_": false

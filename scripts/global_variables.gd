@@ -28,3 +28,5 @@ var dead = false
 var menu_back = false
 
 var music = false
+
+var teleport_pos = Vector2()

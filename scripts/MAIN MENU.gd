@@ -34,9 +34,9 @@ func settings():
 func _on_fullscreenButton_toggled(button_pressed):
 	match(button_pressed):
 		true:
-			OS.window_fullscreen = !OS.window_fullscreen
+			OS.window_fullscreen = true
 		false:
-			OS.window_fullscreen = !OS.window_fullscreen
+			OS.window_fullscreen = false
 
 func _on_closemenuButton_pressed():
 	$Control/title.show()

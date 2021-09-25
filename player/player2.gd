@@ -8,7 +8,7 @@ var gravity = globals.gravity
 var jump_force = -globals.jump_force
 export var mult_jump_wall = 1.2
 var jump_force_wall = -300 * mult_jump_wall
-export var max_fall_speed = 750
+export var max_fall_speed = 2000
 var zoom = 0.25
 
 var dead = false
@@ -66,6 +66,10 @@ func _process(_delta):
 		globals.deaths += 1
 		get_tree().change_scene("res://Scenes/MAIN-MENUS/MAIN MENU.tscn")
 
+	if Input.is_action_just_pressed("teleport"):
+		self.set_global_position(globals.teleport_pos)
+		print("Teleported to: " + str(globals.teleport_pos))
+
 func _physics_process(_delta):
 	
 	_particles()
@@ -94,6 +98,7 @@ func _physics_process(_delta):
 	if not Debug:
 		motion.y += gravity
 		motion.y = min(motion.y, max_fall_speed)
+		print(motion.y)
 	
 	# Motion code
 	
