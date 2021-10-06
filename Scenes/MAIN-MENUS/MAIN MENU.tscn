@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/MAIN MENU.gd" type="Script" id=1]
 [ext_resource path="res://textures/UI/start.png" type="Texture" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://Scenes/Objects/saw.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Objects/next level.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Objects/teleporter.tscn" type="PackedScene" id=21]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -46,59 +45,6 @@ blend_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id=8]
 blend_mode = 1
-
-[sub_resource type="Gradient" id=9]
-offsets = PoolRealArray( 0, 0.248408, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
-
-[sub_resource type="ParticlesMaterial" id=11]
-resource_local_to_scene = true
-emission_shape = 2
-emission_box_extents = Vector3( 6, 60, 1 )
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 1.0
-orbit_velocity = 0.1
-orbit_velocity_random = 1.0
-linear_accel = -100.0
-linear_accel_random = 1.0
-tangential_accel = 100.0
-tangential_accel_random = 1.0
-angle = 180.0
-angle_random = 1.0
-scale = 1.5
-scale_random = 1.0
-color_ramp = SubResource( 10 )
-hue_variation = 1.0
-hue_variation_random = 0.14
-
-[sub_resource type="ParticlesMaterial" id=12]
-resource_local_to_scene = true
-emission_shape = 2
-emission_box_extents = Vector3( 6, 60, 1 )
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 1.0
-orbit_velocity = 0.1
-orbit_velocity_random = 1.0
-linear_accel = -100.0
-linear_accel_random = 1.0
-tangential_accel = 100.0
-tangential_accel_random = 1.0
-angle = 180.0
-angle_random = 1.0
-scale = 1.5
-scale_random = 1.0
-color_ramp = SubResource( 10 )
-hue_variation = 1.0
-hue_variation_random = 0.14
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -232,7 +178,6 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="."]
-visible = false
 anchor_left = -0.250186
 anchor_top = -0.246667
 anchor_right = 0.249189
@@ -409,33 +354,6 @@ scale = Vector2( 6.9, 6.9 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
-[node name="Teleporter" parent="." instance=ExtResource( 21 )]
-position = Vector2( -201.045, 151.964 )
-
-[node name="portal1" parent="Teleporter" index="0"]
-position = Vector2( 172.925, 9.02344 )
-
-[node name="portal2" parent="Teleporter" index="1"]
-position = Vector2( 531.647, -169.426 )
-rotation = 1.57079
-
-[node name="Particles2D" parent="Teleporter/portal2" index="0"]
-process_material = SubResource( 11 )
-
-[node name="Teleporter2" parent="." instance=ExtResource( 21 )]
-position = Vector2( -201.045, 151.964 )
-
-[node name="portal1" parent="Teleporter2" index="0"]
-position = Vector2( 534.475, -32.2058 )
-rotation = -1.57079
-
-[node name="portal2" parent="Teleporter2" index="1"]
-position = Vector2( 223.908, -129.843 )
-rotation = 1.57079
-
-[node name="Particles2D" parent="Teleporter2/portal2" index="0"]
-process_material = SubResource( 12 )
-
 [connection signal="pressed" from="Control/startButton" to="." method="_on_startButton_pressed"]
 [connection signal="pressed" from="Control/levelSelector" to="." method="_on_levelSelector_pressed"]
 [connection signal="pressed" from="Control/settingsButton" to="." method="_on_settingsButton_pressed"]
@@ -448,5 +366,3 @@ process_material = SubResource( 12 )
 [connection signal="pressed" from="Control/settings/audioButton" to="." method="_on_audioButton_pressed"]
 
 [editable path="player"]
-[editable path="Teleporter"]
-[editable path="Teleporter2"]

@@ -49,6 +49,8 @@ func _ready():
 
 func _process(_delta):
 	
+	# $Camera2D.rotation_degrees = $Camera2D.rotation_degrees + 1
+	
 	# Check if you have debug on or off, and if you are dead
 	
 	if Input.is_action_just_pressed("debug"):
@@ -139,8 +141,9 @@ func _physics_process(_delta):
 				motion.y = jump_force
 				motion.x += -speed * 6.9
 		
-	if Input.is_action_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel"):
 # warning-ignore:return_value_discarded
+			globals.deaths =+ globals.deaths + 1
 			get_tree().reload_current_scene()
 	
 	# Debug Code
@@ -154,6 +157,11 @@ func _physics_process(_delta):
 			motion.y = 200
 		elif not _pressing_movement_vertical():
 			motion.y = 0
+	
+	if Input.is_action_just_pressed("ui_home"):
+		$Camera2D.rotate(1)
+	if Input.is_action_just_pressed("ui_end"):
+		pass
 	
 	motion = move_and_slide(motion, UP)
 
