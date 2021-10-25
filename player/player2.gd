@@ -100,7 +100,6 @@ func _physics_process(_delta):
 	if not Debug:
 		motion.y += gravity
 		motion.y = min(motion.y, max_fall_speed)
-		print(motion.y)
 	
 	# Motion code
 	
@@ -198,6 +197,7 @@ func _death():
 	$particles/death.set_emitting(true)
 	$Timers/deathTimer.start()
 	$Light2D.energy = 0.25
+	print("Deaths: ", globals.deaths + 1)
 
 func _on_Timer_timeout():
 # warning-ignore:return_value_discarded

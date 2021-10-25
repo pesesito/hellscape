@@ -388,4 +388,4 @@ tile_data = PoolIntArray( -2883561, 0, 0, -2883560, 0, 0, -2883559, 0, 0, -28835
 [node name="Next_level" parent="." instance=ExtResource( 6 )]
 position = Vector2( 519.995, 349.047 )
 scale = Vector2( 0.213, 1 )
-next_world = "res://Scenes/MAIN MENU.tscn"
+next_world = "res://Scenes/Levels/Level 6.tscn"
